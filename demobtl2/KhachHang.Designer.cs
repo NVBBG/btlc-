@@ -143,6 +143,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.lvKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvKH.FullRowSelect = true;
             this.lvKH.GridLines = true;
             this.lvKH.Location = new System.Drawing.Point(39, 167);
             this.lvKH.Name = "lvKH";
@@ -170,12 +171,12 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Giới Tính";
-            this.columnHeader4.Width = 102;
+            this.columnHeader4.Width = 124;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Điện Thoại";
-            this.columnHeader5.Width = 198;
+            this.columnHeader5.Width = 134;
             // 
             // btnDong
             // 

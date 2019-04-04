@@ -97,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 57);
+            this.label3.Location = new System.Drawing.Point(8, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 5;
@@ -151,7 +151,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 161);
+            this.label11.Location = new System.Drawing.Point(11, 162);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 13);
             this.label11.TabIndex = 16;
@@ -159,7 +159,7 @@
             // 
             // txtSdt
             // 
-            this.txtSdt.Location = new System.Drawing.Point(90, 158);
+            this.txtSdt.Location = new System.Drawing.Point(90, 159);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(133, 20);
             this.txtSdt.TabIndex = 7;
@@ -206,6 +206,7 @@
             // 
             // txtMaNv
             // 
+            this.txtMaNv.Enabled = false;
             this.txtMaNv.Location = new System.Drawing.Point(90, 24);
             this.txtMaNv.Name = "txtMaNv";
             this.txtMaNv.Size = new System.Drawing.Size(133, 20);
@@ -214,7 +215,7 @@
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(90, 56);
+            this.txtTenNV.Location = new System.Drawing.Point(90, 54);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(133, 20);
             this.txtTenNV.TabIndex = 2;
@@ -304,7 +305,7 @@
             // 
             // txtXacNhanMK
             // 
-            this.txtXacNhanMK.Location = new System.Drawing.Point(126, 68);
+            this.txtXacNhanMK.Location = new System.Drawing.Point(126, 67);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(236, 20);
             this.txtXacNhanMK.TabIndex = 10;
@@ -409,6 +410,7 @@
             this.columnHeader8,
             this.columnHeader9});
             this.lvNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvNhanVien.FullRowSelect = true;
             this.lvNhanVien.GridLines = true;
             this.lvNhanVien.Location = new System.Drawing.Point(10, 279);
             this.lvNhanVien.Name = "lvNhanVien";

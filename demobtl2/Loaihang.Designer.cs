@@ -95,6 +95,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.lvMatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvMatHang.FullRowSelect = true;
             this.lvMatHang.GridLines = true;
             this.lvMatHang.Location = new System.Drawing.Point(25, 136);
             this.lvMatHang.Name = "lvMatHang";

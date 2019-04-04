@@ -73,10 +73,9 @@ namespace demobtl2
 
         private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {   
-             Thongtinnv nv = new Thongtinnv();
+            Thongtinnv nv = new Thongtinnv();
             if (CheckExistForm("Thongtinnv"))
             {
-               
                 nv.MdiParent = this;
                 nv.Show();
             }

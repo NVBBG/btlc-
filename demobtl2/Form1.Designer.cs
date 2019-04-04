@@ -159,7 +159,7 @@
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDangNhap.UseVisualStyleBackColor = false;
-            this.btnDangNhap.Click += new System.EventHandler(this.button1_Click);
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // Form1
             // 

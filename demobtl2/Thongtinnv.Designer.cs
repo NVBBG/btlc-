@@ -34,25 +34,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.rdNu = new System.Windows.Forms.RadioButton();
+            this.rdNam = new System.Windows.Forms.RadioButton();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtMa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSdt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mksNgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtXnmkm = new System.Windows.Forms.TextBox();
+            this.txtMkm = new System.Windows.Forms.TextBox();
+            this.txtMkc = new System.Windows.Forms.TextBox();
+            this.txtTk = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -113,16 +113,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.btnCapNhat);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(this.rdNu);
+            this.groupBox1.Controls.Add(this.rdNam);
+            this.groupBox1.Controls.Add(this.txtHoTen);
+            this.groupBox1.Controls.Add(this.txtMa);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSdt);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.mksNgaySinh);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pictureBox7);
             this.groupBox1.Controls.Add(this.label3);
@@ -138,72 +138,72 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
-            // button1
+            // btnCapNhat
             // 
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::demobtl2.Properties.Resources.icons8_restart_32;
-            this.button1.Location = new System.Drawing.Point(98, 213);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 31);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Cập nhật thông tin";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCapNhat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCapNhat.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Image = global::demobtl2.Properties.Resources.icons8_restart_32;
+            this.btnCapNhat.Location = new System.Drawing.Point(98, 213);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(161, 31);
+            this.btnCapNhat.TabIndex = 8;
+            this.btnCapNhat.Text = "Cập nhật thông tin";
+            this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCapNhat.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtDiaChi
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(98, 150);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(161, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtDiaChi.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(98, 150);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(0);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(161, 20);
+            this.txtDiaChi.TabIndex = 5;
             // 
-            // radioButton2
+            // rdNu
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(179, 129);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 18);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdNu.AutoSize = true;
+            this.rdNu.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNu.Location = new System.Drawing.Point(179, 129);
+            this.rdNu.Margin = new System.Windows.Forms.Padding(0);
+            this.rdNu.Name = "rdNu";
+            this.rdNu.Size = new System.Drawing.Size(39, 18);
+            this.rdNu.TabIndex = 4;
+            this.rdNu.TabStop = true;
+            this.rdNu.Text = "Nữ";
+            this.rdNu.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdNam
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(98, 129);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(46, 18);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdNam.AutoSize = true;
+            this.rdNam.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNam.Location = new System.Drawing.Point(98, 129);
+            this.rdNam.Margin = new System.Windows.Forms.Padding(0);
+            this.rdNam.Name = "rdNam";
+            this.rdNam.Size = new System.Drawing.Size(46, 18);
+            this.rdNam.TabIndex = 3;
+            this.rdNam.TabStop = true;
+            this.rdNam.Text = "Nam";
+            this.rdNam.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtHoTen
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(98, 108);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(161, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtHoTen.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Location = new System.Drawing.Point(98, 108);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(0);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(161, 20);
+            this.txtHoTen.TabIndex = 2;
             // 
-            // textBox2
+            // txtMa
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(98, 87);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtMa.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMa.Location = new System.Drawing.Point(98, 87);
+            this.txtMa.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMa.Name = "txtMa";
+            this.txtMa.Size = new System.Drawing.Size(161, 20);
+            this.txtMa.TabIndex = 1;
             // 
             // label6
             // 
@@ -216,14 +216,14 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "Số điện thoại";
             // 
-            // textBox1
+            // txtSdt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(98, 192);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtSdt.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSdt.Location = new System.Drawing.Point(98, 192);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSdt.Name = "txtSdt";
+            this.txtSdt.Size = new System.Drawing.Size(161, 20);
+            this.txtSdt.TabIndex = 7;
             // 
             // label5
             // 
@@ -236,16 +236,16 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Ngày sinh";
             // 
-            // maskedTextBox1
+            // mksNgaySinh
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(98, 171);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(161, 20);
-            this.maskedTextBox1.TabIndex = 6;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mksNgaySinh.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mksNgaySinh.Location = new System.Drawing.Point(98, 171);
+            this.mksNgaySinh.Margin = new System.Windows.Forms.Padding(0);
+            this.mksNgaySinh.Mask = "00/00/0000";
+            this.mksNgaySinh.Name = "mksNgaySinh";
+            this.mksNgaySinh.Size = new System.Drawing.Size(161, 20);
+            this.mksNgaySinh.TabIndex = 6;
+            this.mksNgaySinh.ValidatingType = typeof(System.DateTime);
             // 
             // pictureBox7
             // 
@@ -263,10 +263,10 @@
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtXnmkm);
+            this.groupBox2.Controls.Add(this.txtMkm);
+            this.groupBox2.Controls.Add(this.txtMkc);
+            this.groupBox2.Controls.Add(this.txtTk);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,41 +316,41 @@
             this.label9.Text = "Mật khẩu mới";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox8
+            // txtXnmkm
             // 
-            this.textBox8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(116, 90);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(113, 20);
-            this.textBox8.TabIndex = 12;
+            this.txtXnmkm.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXnmkm.Location = new System.Drawing.Point(116, 90);
+            this.txtXnmkm.Margin = new System.Windows.Forms.Padding(0);
+            this.txtXnmkm.Name = "txtXnmkm";
+            this.txtXnmkm.Size = new System.Drawing.Size(113, 20);
+            this.txtXnmkm.TabIndex = 12;
             // 
-            // textBox7
+            // txtMkm
             // 
-            this.textBox7.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(116, 69);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(113, 20);
-            this.textBox7.TabIndex = 11;
+            this.txtMkm.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMkm.Location = new System.Drawing.Point(116, 69);
+            this.txtMkm.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMkm.Name = "txtMkm";
+            this.txtMkm.Size = new System.Drawing.Size(113, 20);
+            this.txtMkm.TabIndex = 11;
             // 
-            // textBox5
+            // txtMkc
             // 
-            this.textBox5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(116, 48);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(113, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtMkc.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMkc.Location = new System.Drawing.Point(116, 48);
+            this.txtMkc.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMkc.Name = "txtMkc";
+            this.txtMkc.Size = new System.Drawing.Size(113, 20);
+            this.txtMkc.TabIndex = 10;
             // 
-            // textBox6
+            // txtTk
             // 
-            this.textBox6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(116, 27);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(113, 20);
-            this.textBox6.TabIndex = 9;
+            this.txtTk.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTk.Location = new System.Drawing.Point(116, 27);
+            this.txtTk.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTk.Name = "txtTk";
+            this.txtTk.Size = new System.Drawing.Size(113, 20);
+            this.txtTk.TabIndex = 9;
             // 
             // label7
             // 
@@ -437,6 +437,7 @@
             this.Name = "Thongtinnv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thongtinnv";
+            this.Load += new System.EventHandler(this.Thongtinnv_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -457,24 +458,24 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.RadioButton rdNu;
+        private System.Windows.Forms.RadioButton rdNam;
+        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mksNgaySinh;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtXnmkm;
+        private System.Windows.Forms.TextBox txtMkm;
+        private System.Windows.Forms.TextBox txtMkc;
+        private System.Windows.Forms.TextBox txtTk;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;

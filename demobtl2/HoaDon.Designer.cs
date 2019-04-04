@@ -397,6 +397,7 @@
             this.columnHeader8,
             this.columnHeader9});
             this.lvHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvHoaDon.FullRowSelect = true;
             this.lvHoaDon.GridLines = true;
             this.lvHoaDon.Location = new System.Drawing.Point(6, 60);
             this.lvHoaDon.Name = "lvHoaDon";
@@ -446,7 +447,7 @@
             // 
             // columnHeader9
             // 
-            this.columnHeader9.Text = "Tổng Tiền";
+            this.columnHeader9.Text = "Thành tiền";
             this.columnHeader9.Width = 92;
             // 
             // txtGiamGia
@@ -537,7 +538,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(653, 394);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.groupBox2);

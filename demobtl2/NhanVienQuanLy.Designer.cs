@@ -119,7 +119,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVienQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NhanVienQuanLy";
+            this.Text = "     ";
             this.Load += new System.EventHandler(this.NhanVienQuanLy_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();

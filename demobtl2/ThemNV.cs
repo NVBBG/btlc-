@@ -44,7 +44,7 @@ namespace demobtl2
                 // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
                 string ma = rd.GetString(0);
                 string ten = rd.GetString(1);
-               // MessageBox.Show(rd.GetBoolean(2).ToString());
+                // MessageBox.Show(rd.GetBoolean(2).ToString());
                 Boolean gioitinh = rd.GetBoolean(2);
                 string diachi = rd.GetString(3);
                 DateTime ns = rd.GetDateTime(4);
@@ -61,7 +61,7 @@ namespace demobtl2
                 }
                 else
                 {
-                   lv.SubItems.Add("Nữ");
+                    lv.SubItems.Add("Nữ");
                 }
                 lv.SubItems.Add(diachi);
                 lv.SubItems.Add(ns.ToString());
@@ -73,10 +73,80 @@ namespace demobtl2
             }
             rd.Close();
         }
+        public static string ConvertTimeTo24(string hour)
+        {
+            string h = "";
+            switch (hour)
+            {
+                case "1":
+                    h = "13";
+                    break;
+                case "2":
+                    h = "14";
+                    break;
+                case "3":
+                    h = "15";
+                    break;
+                case "4":
+                    h = "16";
+                    break;
+                case "5":
+                    h = "17";
+                    break;
+                case "6":
+                    h = "18";
+                    break;
+                case "7":
+                    h = "19";
+                    break;
+                case "8":
+                    h = "20";
+                    break;
+                case "9":
+                    h = "21";
+                    break;
+                case "10":
+                    h = "22";
+                    break;
+                case "11":
+                    h = "23";
+                    break;
+                case "12":
+                    h = "0";
+                    break;
+            }
+            return h;
+        }
+
         private void ThemNV_Load(object sender, EventArgs e)
         {
+            string tiento = "NV";
             btnHuy.PerformClick();
-            hien(cnn,constr);
+            txtMaNv.Text = CreateKey(tiento);
+            hien(cnn, constr);
+        }
+        public static string CreateKey(string tiento)
+        {
+            string key = tiento;
+            string[] partsDay;
+            partsDay = DateTime.Now.ToShortDateString().Split('/');
+            //Ví dụ 07/08/2009
+            string d = String.Format("{0}{1}{2}", partsDay[0], partsDay[1], partsDay[2]);
+            key = key + d;
+            string[] partsTime;
+            partsTime = DateTime.Now.ToLongTimeString().Split(':');
+            //Ví dụ 7:08:03 PM hoặc 7:08:03 AM
+            if (partsTime[2].Substring(3, 2) == "PM")
+                partsTime[0] = ConvertTimeTo24(partsTime[0]);
+            if (partsTime[2].Substring(3, 2) == "AM")
+                if (partsTime[0].Length == 1)
+                    partsTime[0] = "0" + partsTime[0];
+            //Xóa ký tự trắng và PM hoặc AM
+            partsTime[2] = partsTime[2].Remove(2, 3);
+            string t;
+            t = String.Format("_{0}{1}{2}", partsTime[0], partsTime[1], partsTime[2]);
+            key = key + t;
+            return key;
         }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -121,8 +191,8 @@ namespace demobtl2
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult rt = MessageBox.Show("Bạn có muốn thoát ?","Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(rt == DialogResult.Yes)
+            DialogResult rt = MessageBox.Show("Bạn có muốn thoát ?", "Hỏi thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rt == DialogResult.Yes)
             {
                 Close();
             }
@@ -162,10 +232,10 @@ namespace demobtl2
             {
                 return;
             }
-            if(lvNhanVien.SelectedItems.Count > 0)
+            if (lvNhanVien.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvNhanVien.SelectedItems[0]; //ấn vào cột thứ nhất
-               // string ma = lvi.SubItems[0].Text; // chuyển dữ liệu từ cột đó về dạng int
+                                                                // string ma = lvi.SubItems[0].Text; // chuyển dữ liệu từ cột đó về dạng int
                 txtMaNv.Text = lvi.SubItems[0].Text;
                 txtTenNV.Text = lvi.SubItems[1].Text;
                 if (lvi.SubItems[2].Text == "Nam")
@@ -198,8 +268,8 @@ namespace demobtl2
                 txtSdt.Text = lvi.SubItems[8].Text;
             }
             Hiennut();
-           // HienThiChiTietSP(ma);
-        }        
+            // HienThiChiTietSP(ma);
+        }
         private void Khoa()
         {
             btnKhoa.Enabled = true;
@@ -272,7 +342,7 @@ namespace demobtl2
             cmd.Parameters.Add("@sdt", SqlDbType.NVarChar).Value = txtSdt.Text;
             //SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
             int i = cmd.ExecuteNonQuery();
-            if(i>0)
+            if (i > 0)
             {
                 MessageBox.Show("Thêm thành công");
             }
@@ -336,10 +406,10 @@ namespace demobtl2
                 {
                     MessageBox.Show("Mở tài khoản thất bại");
                 }
-               //MessageBox.Show("Khóa tài khoản thất bại");
+                //MessageBox.Show("Khóa tài khoản thất bại");
             }
             //btnHuy.PerformClick();
-            hien(cnn,constr);
+            hien(cnn, constr);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -411,7 +481,7 @@ namespace demobtl2
             cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = txtMaNv.Text;
             cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "delete";
             int i = cmd.ExecuteNonQuery();
-            if(i>0)
+            if (i > 0)
             {
                 MessageBox.Show("Xóa thành công");
             }

@@ -66,6 +66,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.lvMyPham.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lvMyPham.FullRowSelect = true;
             this.lvMyPham.GridLines = true;
             this.lvMyPham.Location = new System.Drawing.Point(0, 192);
             this.lvMyPham.Name = "lvMyPham";
