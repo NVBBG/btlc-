@@ -36,6 +36,7 @@
             this.loạiMỹPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýMỹPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +107,14 @@
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(58, 27);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // NhanVienQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -113,6 +122,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(884, 505);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
@@ -137,5 +147,6 @@
         private System.Windows.Forms.ToolStripMenuItem loạiMỹPhẩmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýMỹPhẩmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

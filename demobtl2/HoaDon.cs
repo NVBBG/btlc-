@@ -98,6 +98,9 @@ namespace demobtl2
             hiendlcbkhachhang();
             hienmahang();
             hienlenlv();
+            txtMaNV.Enabled = false;
+            txtTenNV.Enabled = false;
+            hienmanv();
         }
         private void hienlenlv()
         {
@@ -278,7 +281,7 @@ namespace demobtl2
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
-            cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = cbMaNhanVien.Text;
+            cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = txtMaNV.Text;
             cmd.Parameters.AddWithValue("@makh", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue;
             cmd.Parameters.AddWithValue("@mahang", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue;
             cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.Text;
@@ -306,11 +309,59 @@ namespace demobtl2
             string thanhcong = "Sửa thành công";
             Action(query, action, loi, thanhcong);
         }
+        public void hienmanv()
+        {
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string query = "NhanVien";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ma", SqlDbType.VarChar).Value = laythongtindn();
+            cmd.Parameters.AddWithValue("@action", SqlDbType.VarChar).Value = "selectone";
+            SqlDataReader rd = cmd.ExecuteReader();
+            string ma = null;
+            string ten = null;
+            while (rd.Read())
+            {
+                ma = rd.GetString(0);
+                ten = rd.GetString(1);
+            }
+            txtMaNV.Text = ma;
+            txtTenNV.Text = ten;
+            rd.Close();
+        }
+        public string laythongtindn()
+        {
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string query = "get_session";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader rd = cmd.ExecuteReader();
+            string ma = null;
+            while (rd.Read())
+            {
+                ma = rd.GetString(0);
+            }
+            rd.Close();
+            return ma;
+        }
         private void btnHuy_Click(object sender, EventArgs e)
         {
             btnIn.Enabled = false;
             btnSua.Enabled = false;
-
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -339,7 +390,7 @@ namespace demobtl2
                 txtMaHD.Enabled = false;
                 ListViewItem lvi1 = lvHoaDon.SelectedItems[0];
                 txtMaHD.Text = lvi1.SubItems[0].Text;
-                cbMaNhanVien.Text = lvi1.SubItems[1].Text;
+                txtTenNV.Text = lvi1.SubItems[1].Text;
                 cbMaKH.Text = lvi1.SubItems[2].Text;
                 cbMaHang.Text = lvi1.SubItems[3].Text;
                 mskNgayBan.Text = lvi1.SubItems[4].Text;
@@ -359,6 +410,15 @@ namespace demobtl2
             // btnXoa.Enabled = true;
             // btnLuu.Enabled = true;
             //HienThiHD(ma);
+        }
+
+        private void txtGiamGia_TextChanged(object sender, EventArgs e)
+        {
+            double giaban = Double.Parse(txtDonGia.Text);
+            int sl = Int32.Parse(txtSoLuong.Text);
+            double giamgia = Int32.Parse(txtGiamGia.Text);
+            double tt = (giaban * sl) - ((giaban * sl) * (giamgia / 100));
+            txttt.Text = tt.ToString();
         }
     }
 }

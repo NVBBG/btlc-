@@ -274,11 +274,17 @@ namespace demobtl2
         {
             btnKhoa.Enabled = true;
             btnMoKhoa.Enabled = false;
+            txtTaiKhoan.Enabled = true;
+            txtMatKhau.Enabled = true;
+            txtXacNhanMK.Enabled = true;
         }
         private void Mokhoa()
         {
             btnKhoa.Enabled = false;
             btnMoKhoa.Enabled = true;
+            txtTaiKhoan.Enabled = false;
+            txtMatKhau.Enabled = false;
+            txtXacNhanMK.Enabled = false;
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {

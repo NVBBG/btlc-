@@ -16,7 +16,7 @@ namespace demobtl2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThemNV());
+            Application.Run(new Form1());
         }
     }
 }
