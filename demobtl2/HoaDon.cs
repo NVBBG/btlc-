@@ -258,16 +258,74 @@ namespace demobtl2
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            //MessageBox.Show(cbMaNhanVien.Text);
+            string query = "HoaDon";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
+            cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = cbMaNhanVien.Text;
+            cmd.Parameters.AddWithValue("@makh", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue;
+            cmd.Parameters.AddWithValue("@mahang", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue;
+            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.Text;
+            cmd.Parameters.AddWithValue("@soluong", SqlDbType.Int).Value = txtSoLuong.Text;
+            cmd.Parameters.AddWithValue("@giaban", SqlDbType.Float).Value = txtDonGia.Text;
+            cmd.Parameters.AddWithValue("@giamgia", SqlDbType.Float).Value = txtGiamGia.Text;
+            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "insert";
+            //SqlDataReader rd = cmd.ExecuteReader();
+            int i = cmd.ExecuteNonQuery();
+            if(i>0)
+            {
+                MessageBox.Show("Thêm hóa đơn thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm hóa đơn thất bại");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            //MessageBox.Show(cbMaNhanVien.Text);
+            string query = "HoaDon";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
+            cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = cbMaNhanVien.Text;
+            cmd.Parameters.AddWithValue("@makh", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue;
+            cmd.Parameters.AddWithValue("@mahang", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue;
+            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.Text;
+            cmd.Parameters.AddWithValue("@soluong", SqlDbType.Int).Value = txtSoLuong.Text;
+            cmd.Parameters.AddWithValue("@giaban", SqlDbType.Float).Value = txtDonGia.Text;
+            cmd.Parameters.AddWithValue("@giamgia", SqlDbType.Float).Value = txtGiamGia.Text;
+            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "update";
+            //SqlDataReader rd = cmd.ExecuteReader();
+            int i = cmd.ExecuteNonQuery();
+            if (i > 0)
+            {
+                MessageBox.Show("Cập nhật hóa đơn thành công");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật hóa đơn thất bại !");
+            }
+            hienlenlv();
         }
-
-        
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             btnIn.Enabled = false;

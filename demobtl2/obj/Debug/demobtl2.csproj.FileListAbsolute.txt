@@ -7,7 +7,6 @@ C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csproj.GenerateRes
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.exe
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.pdb
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Nhanvien.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.ThemNV.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.NhanVienQuanLy.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.HoaDon.resources

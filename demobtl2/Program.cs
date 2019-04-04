@@ -16,7 +16,7 @@ namespace demobtl2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MyPham());
+            Application.Run(new HoaDon());
         }
     }
 }

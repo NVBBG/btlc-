@@ -452,7 +452,7 @@
             // txtGiamGia
             // 
             this.txtGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiamGia.Location = new System.Drawing.Point(307, 36);
+            this.txtGiamGia.Location = new System.Drawing.Point(307, 35);
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(119, 20);
             this.txtGiamGia.TabIndex = 11;
@@ -488,7 +488,7 @@
             // txtDonGia
             // 
             this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(307, 13);
+            this.txtDonGia.Location = new System.Drawing.Point(307, 14);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(119, 20);
             this.txtDonGia.TabIndex = 12;
