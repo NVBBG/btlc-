@@ -94,7 +94,7 @@ namespace demobtl2
         {
             string tiento = "HD";
             txtMaHD.Text = CreateKey(tiento);
-            txtMaHD.Enabled = false;
+            ///txtMaHD.Enabled = false;
             hiendlcbkhachhang();
             hienmahang();
             hienlenlv();
@@ -258,40 +258,13 @@ namespace demobtl2
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            //MessageBox.Show(cbMaNhanVien.Text);
             string query = "HoaDon";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
-            cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = cbMaNhanVien.Text;
-            cmd.Parameters.AddWithValue("@makh", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue;
-            cmd.Parameters.AddWithValue("@mahang", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue;
-            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.Text;
-            cmd.Parameters.AddWithValue("@soluong", SqlDbType.Int).Value = txtSoLuong.Text;
-            cmd.Parameters.AddWithValue("@giaban", SqlDbType.Float).Value = txtDonGia.Text;
-            cmd.Parameters.AddWithValue("@giamgia", SqlDbType.Float).Value = txtGiamGia.Text;
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "insert";
-            //SqlDataReader rd = cmd.ExecuteReader();
-            int i = cmd.ExecuteNonQuery();
-            if(i>0)
-            {
-                MessageBox.Show("Thêm hóa đơn thành công");
-            }
-            else
-            {
-                MessageBox.Show("Thêm hóa đơn thất bại");
-            }
+            string action = "insert";
+            string loi = "Thêm không thành công";
+            string thanhcong = "Thêm thành công";
+            Action(query, action,loi,thanhcong);
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
+        private void Action(string query,string action,string loi,string thanhcong)
         {
             if (cnn == null)
             {
@@ -302,7 +275,7 @@ namespace demobtl2
                 cnn.Open();
             }
             //MessageBox.Show(cbMaNhanVien.Text);
-            string query = "HoaDon";
+            
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
@@ -313,18 +286,26 @@ namespace demobtl2
             cmd.Parameters.AddWithValue("@soluong", SqlDbType.Int).Value = txtSoLuong.Text;
             cmd.Parameters.AddWithValue("@giaban", SqlDbType.Float).Value = txtDonGia.Text;
             cmd.Parameters.AddWithValue("@giamgia", SqlDbType.Float).Value = txtGiamGia.Text;
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "update";
+            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = action;
             //SqlDataReader rd = cmd.ExecuteReader();
             int i = cmd.ExecuteNonQuery();
             if (i > 0)
             {
-                MessageBox.Show("Cập nhật hóa đơn thành công");
+                MessageBox.Show(thanhcong);
             }
             else
             {
-                MessageBox.Show("Cập nhật hóa đơn thất bại !");
+                MessageBox.Show(loi);
             }
             hienlenlv();
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string query = "HoaDon";
+            string action = "update";
+            string loi = "Sửa không thành công";
+            string thanhcong = "Sửa thành công";
+            Action(query, action,loi,thanhcong);
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
@@ -356,6 +337,7 @@ namespace demobtl2
             }
             if (lvHoaDon.SelectedItems.Count > 0)
             {
+                txtMaHD.Enabled = false;
                 ListViewItem lvi1 = lvHoaDon.SelectedItems[0];
                 txtMaHD.Text = lvi1.SubItems[0].Text;
                 cbMaNhanVien.Text = lvi1.SubItems[1].Text;

@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbMaLoai = new System.Windows.Forms.ComboBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbMaLoai = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -190,6 +190,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách mỹ phẩm";
             // 
+            // cbMaLoai
+            // 
+            this.cbMaLoai.FormattingEnabled = true;
+            this.cbMaLoai.Location = new System.Drawing.Point(90, 15);
+            this.cbMaLoai.Name = "cbMaLoai";
+            this.cbMaLoai.Size = new System.Drawing.Size(230, 21);
+            this.cbMaLoai.TabIndex = 11;
+            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(90, 118);
@@ -276,19 +284,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tác Vụ";
             // 
-            // cbMaLoai
-            // 
-            this.cbMaLoai.FormattingEnabled = true;
-            this.cbMaLoai.Location = new System.Drawing.Point(90, 15);
-            this.cbMaLoai.Name = "cbMaLoai";
-            this.cbMaLoai.Size = new System.Drawing.Size(230, 21);
-            this.cbMaLoai.TabIndex = 11;
-            // 
             // MyPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(730, 410);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label6);
