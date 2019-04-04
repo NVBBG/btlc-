@@ -71,11 +71,19 @@ namespace demobtl2
             {
                 return;
             }
+            if (lvMyPham.SelectedItems.Count > 0)
+            {
+               // cbMaLoai.Enabled = false;
+                ListViewItem lvi = lvMyPham.SelectedItems[0];
+                txtMaSp.Text = lvi.SubItems[1].Text;
+                txtTenMp.Text = lvi.SubItems[2].Text;
+                cbMaLoai.Text = lvi.SubItems[0].Text;
+                txtSoLuong.Text = lvi.SubItems[3].Text;
+                txtDonGia.Text = lvi.SubItems[4].Text;
+            }
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            ListViewItem lvi = lvMyPham.SelectedItems[0];
-            string ma = lvi.SubItems[0].Text;
-            HienThiMpMa(ma);
+           // HienThiMpMa(ma);
         }
         private void hienlencombobox()
         {
@@ -95,35 +103,10 @@ namespace demobtl2
             DataTable tb = new DataTable();
             ad.Fill(tb);
             cbMaLoai.DataSource = tb;
-            cbMaLoai.DisplayMember = "sMaloaihang";
+            cbMaLoai.DisplayMember = "sTenloaihang";
             cbMaLoai.ValueMember = "sMaloaihang";
         }
-        private void HienThiMpMa(string ma)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string query = "MyPham";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = ma;
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                txtMaSp.Text = rd.GetString(0);
-                txtTenMp.Text = rd.GetString(1);
-                cbMaLoai.Text = rd.GetString(2);
-                txtSoLuong.Text = rd.GetInt32(3)+"";
-                txtDonGia.Text = rd.GetDouble(4) + "";
-            }
-            rd.Close();
-        }
+       
         private void btnHuy_Click(object sender, EventArgs e)
         {
             cbMaLoai.Text="";

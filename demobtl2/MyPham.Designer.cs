@@ -39,7 +39,6 @@
             this.txtMaSp = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbMaLoai = new System.Windows.Forms.ComboBox();
             this.txtTenMp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbMaLoai = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,12 +77,12 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Mã loại";
+            this.columnHeader1.Text = "Loại Mỹ Phẩm";
             this.columnHeader1.Width = 95;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Mã sản phẩm";
+            this.columnHeader2.Text = "Mã mỹ phẩm";
             this.columnHeader2.Width = 161;
             // 
             // columnHeader3
@@ -133,17 +133,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(18, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Mã Loại";
-            // 
-            // cbMaLoai
-            // 
-            this.cbMaLoai.FormattingEnabled = true;
-            this.cbMaLoai.Location = new System.Drawing.Point(90, 18);
-            this.cbMaLoai.Name = "cbMaLoai";
-            this.cbMaLoai.Size = new System.Drawing.Size(230, 21);
-            this.cbMaLoai.TabIndex = 1;
+            this.label2.Text = "Loại Mỹ Phẩm";
             // 
             // txtTenMp
             // 
@@ -181,13 +173,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbMaLoai);
             this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTenMp);
-            this.groupBox1.Controls.Add(this.cbMaLoai);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaSp);
             this.groupBox1.Controls.Add(this.label1);
@@ -284,6 +276,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tác Vụ";
             // 
+            // cbMaLoai
+            // 
+            this.cbMaLoai.FormattingEnabled = true;
+            this.cbMaLoai.Location = new System.Drawing.Point(90, 15);
+            this.cbMaLoai.Name = "cbMaLoai";
+            this.cbMaLoai.Size = new System.Drawing.Size(230, 21);
+            this.cbMaLoai.TabIndex = 11;
+            // 
             // MyPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,7 +313,6 @@
         private System.Windows.Forms.TextBox txtMaSp;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbMaLoai;
         private System.Windows.Forms.TextBox txtTenMp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -332,5 +331,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.ComboBox cbMaLoai;
     }
 }

@@ -184,7 +184,7 @@ namespace demobtl2
                 SqlDataReader rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
-                    txtTenKH.Text = rd.GetString(0);
+                    //txtTenKH.Text = rd.GetString(0);
                     txtDiaChi.Text = rd.GetString(2);
                     txtDienThoai.Text = rd.GetString(3);
                 }
@@ -237,7 +237,7 @@ namespace demobtl2
             {
                 while (rd.Read())
                 {
-                    txtTenHang.Text = rd.GetString(0);
+                   // txtTenHang.Text = rd.GetString(0);
                 }
             }
             
@@ -308,9 +308,9 @@ namespace demobtl2
                 txtSoLuong.Text = lvi1.SubItems[6].Text;
                 txtGiamGia.Text = lvi1.SubItems[7].Text;
                 txttt.Text = lvi1.SubItems[8].Text;
-                txtTenKH.Enabled = false;
+                //txtTenKH.Enabled = false;
                 txtTenNV.Enabled = false;
-                txtTenHang.Enabled = false;
+                //txtTenHang.Enabled = false;
             }
            // ListViewItem lvi = lvHoaDon.SelectedItems[0];
             //string ma = lvi.SubItems[0].Text;

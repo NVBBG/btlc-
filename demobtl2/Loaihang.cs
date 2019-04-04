@@ -95,8 +95,8 @@ namespace demobtl2
             if(lvMatHang.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvMatHang.SelectedItems[0];
-                txtMaLoaiHang.Text = lvi.SubItems[1].Text;
-                txtTenLoaiHang.Text = lvi.SubItems[2].Text;
+                txtMaLoaiHang.Text = lvi.SubItems[0].Text;
+                txtTenLoaiHang.Text = lvi.SubItems[1].Text;
             }
             txtMaLoaiHang.Enabled = false;
             //MessageBox.Show(ma);

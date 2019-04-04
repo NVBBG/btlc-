@@ -162,62 +162,44 @@ namespace demobtl2
             {
                 return;
             }
-            ListViewItem lvi = lvNhanVien.SelectedItems[0]; //ấn vào cột thứ nhất
-            string ma = lvi.SubItems[0].Text; // chuyển dữ liệu từ cột đó về dạng int
+            if(lvNhanVien.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvNhanVien.SelectedItems[0]; //ấn vào cột thứ nhất
+               // string ma = lvi.SubItems[0].Text; // chuyển dữ liệu từ cột đó về dạng int
+                txtMaNv.Text = lvi.SubItems[0].Text;
+                txtTenNV.Text = lvi.SubItems[1].Text;
+                if (lvi.SubItems[2].Text == "Nam")
+                {
+                    rdNam.Checked = true;
+                }
+                else
+                {
+                    rdNu.Checked = true;
+                }
+                txtDiaChi.Text = lvi.SubItems[3].Text;
+                mskns.Text = lvi.SubItems[4].Text;
+                txtTaiKhoan.Text = lvi.SubItems[5].Text;
+                txtXacNhanMK.Text = lvi.SubItems[6].Text;
+                txtMatKhau.Text = lvi.SubItems[6].Text;
+                if (lvi.SubItems[7].Text.Trim() == "khoa")
+                {
+                    Mokhoa();
+                }
+                else if (lvi.SubItems[7].Text.Trim() == "nhanvien")
+                {
+                    Khoa();
+                }
+                else
+                {
+                    //MessageBox.Show(lvi.SubItems[7].Text);
+                    btnKhoa.Enabled = false;
+                    btnMoKhoa.Enabled = false;
+                }
+                txtSdt.Text = lvi.SubItems[8].Text;
+            }
             Hiennut();
-            HienThiChiTietSP(ma);
-        }
-        private void HienThiChiTietSP(string ma)
-        {
-            //checkcnn();
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string gt;
-            string query = "laynvma";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@ma", SqlDbType.VarChar).Value = ma;
-            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
-           // lvNhanVien.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
-            ListViewItem lvi = lvNhanVien.SelectedItems[0];
-            txtMaNv.Text = lvi.SubItems[0].Text;
-            txtTenNV.Text = lvi.SubItems[1].Text;
-            if(lvi.SubItems[2].Text == "Nam")
-            {
-                rdNam.Checked = true;
-            }
-            else
-            {
-                rdNu.Checked = true;
-            }
-            txtDiaChi.Text = lvi.SubItems[3].Text;
-            mskns.Text = lvi.SubItems[4].Text;
-            txtTaiKhoan.Text = lvi.SubItems[5].Text;
-            txtXacNhanMK.Text = lvi.SubItems[6].Text;
-            txtMatKhau.Text = lvi.SubItems[6].Text;
-            if(lvi.SubItems[7].Text.Trim()=="khoa")
-            {
-                Mokhoa();
-            }
-            else if(lvi.SubItems[7].Text.Trim() == "nhanvien")
-            {
-                Khoa();
-            }
-            else
-            {
-                //MessageBox.Show(lvi.SubItems[7].Text);
-                btnKhoa.Enabled = false;
-                btnMoKhoa.Enabled = false;
-            }
-            txtSdt.Text = lvi.SubItems[8].Text;
-            rd.Close();
-        }
+           // HienThiChiTietSP(ma);
+        }        
         private void Khoa()
         {
             btnKhoa.Enabled = true;
