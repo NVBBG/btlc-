@@ -46,7 +46,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mskNgayBan = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.cbMaHD = new System.Windows.Forms.ComboBox();
@@ -56,6 +55,15 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.lvHoaDon = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtGiamGia = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -67,6 +75,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTenHang = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txttt = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +161,7 @@
             // 
             this.cbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaKH.FormattingEnabled = true;
-            this.cbMaKH.Location = new System.Drawing.Point(427, 17);
+            this.cbMaKH.Location = new System.Drawing.Point(427, 35);
             this.cbMaKH.Name = "cbMaKH";
             this.cbMaKH.Size = new System.Drawing.Size(183, 21);
             this.cbMaKH.TabIndex = 4;
@@ -158,8 +169,9 @@
             // 
             // txtTenKH
             // 
+            this.txtTenKH.Enabled = false;
             this.txtTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKH.Location = new System.Drawing.Point(427, 39);
+            this.txtTenKH.Location = new System.Drawing.Point(427, 13);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(183, 20);
             this.txtTenKH.TabIndex = 5;
@@ -197,7 +209,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(427, 60);
+            this.txtDiaChi.Location = new System.Drawing.Point(427, 58);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(183, 20);
             this.txtDiaChi.TabIndex = 6;
@@ -205,7 +217,7 @@
             // txtDienThoai
             // 
             this.txtDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDienThoai.Location = new System.Drawing.Point(427, 81);
+            this.txtDienThoai.Location = new System.Drawing.Point(427, 80);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(183, 20);
             this.txtDienThoai.TabIndex = 7;
@@ -247,7 +259,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.txttt);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.btnDong);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.cbMaHD);
@@ -274,19 +288,6 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin mặt hàng";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::demobtl2.Properties.Resources.archive_remove;
-            this.btnXoa.Location = new System.Drawing.Point(234, 210);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(101, 25);
-            this.btnXoa.TabIndex = 17;
-            this.btnXoa.Text = "Xóa hóa đơn";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnDong
             // 
@@ -337,7 +338,7 @@
             // 
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.Image = global::demobtl2.Properties.Resources.document_print;
-            this.btnIn.Location = new System.Drawing.Point(441, 210);
+            this.btnIn.Location = new System.Drawing.Point(329, 211);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(89, 25);
             this.btnIn.TabIndex = 19;
@@ -349,7 +350,7 @@
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(337, 210);
+            this.btnHuy.Location = new System.Drawing.Point(229, 211);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(101, 25);
             this.btnHuy.TabIndex = 18;
@@ -386,14 +387,68 @@
             // 
             // lvHoaDon
             // 
+            this.lvHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
             this.lvHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvHoaDon.GridLines = true;
-            this.lvHoaDon.Location = new System.Drawing.Point(11, 60);
+            this.lvHoaDon.Location = new System.Drawing.Point(6, 60);
             this.lvHoaDon.Name = "lvHoaDon";
-            this.lvHoaDon.Size = new System.Drawing.Size(606, 150);
+            this.lvHoaDon.Size = new System.Drawing.Size(620, 150);
             this.lvHoaDon.TabIndex = 14;
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
+            this.lvHoaDon.SelectedIndexChanged += new System.EventHandler(this.lvHoaDon_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã HD";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên NV";
+            this.columnHeader2.Width = 57;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tên KH";
+            this.columnHeader3.Width = 65;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tên Hàng";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Ngày bán";
+            this.columnHeader5.Width = 75;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Giá bán";
+            this.columnHeader6.Width = 73;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Số lượng";
+            this.columnHeader7.Width = 57;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Giảm giá (%)";
+            this.columnHeader8.Width = 80;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Tổng Tiền";
+            this.columnHeader9.Width = 92;
             // 
             // txtGiamGia
             // 
@@ -416,7 +471,7 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(307, 13);
+            this.txtSoLuong.Location = new System.Drawing.Point(307, 14);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(119, 20);
             this.txtSoLuong.TabIndex = 10;
@@ -453,7 +508,7 @@
             // 
             this.cbMaHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaHang.FormattingEnabled = true;
-            this.cbMaHang.Location = new System.Drawing.Point(86, 17);
+            this.cbMaHang.Location = new System.Drawing.Point(90, 35);
             this.cbMaHang.Name = "cbMaHang";
             this.cbMaHang.Size = new System.Drawing.Size(124, 21);
             this.cbMaHang.TabIndex = 8;
@@ -481,8 +536,9 @@
             // 
             // txtTenHang
             // 
+            this.txtTenHang.Enabled = false;
             this.txtTenHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHang.Location = new System.Drawing.Point(86, 39);
+            this.txtTenHang.Location = new System.Drawing.Point(90, 14);
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.Size = new System.Drawing.Size(124, 20);
             this.txtTenHang.TabIndex = 9;
@@ -496,6 +552,32 @@
             this.label16.Size = new System.Drawing.Size(185, 25);
             this.label16.TabIndex = 23;
             this.label16.Text = "Hóa Đơn Mua Hàng";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(445, 42);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Tổng tiền :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(511, 42);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 13);
+            this.label17.TabIndex = 24;
+            // 
+            // txttt
+            // 
+            this.txttt.AutoSize = true;
+            this.txttt.Location = new System.Drawing.Point(517, 42);
+            this.txttt.Name = "txttt";
+            this.txttt.Size = new System.Drawing.Size(25, 13);
+            this.txttt.TabIndex = 25;
+            this.txttt.Text = "vnd";
             // 
             // HoaDon
             // 
@@ -560,6 +642,17 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.MaskedTextBox mskNgayBan;
-        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label txttt;
     }
 }

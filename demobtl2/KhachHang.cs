@@ -137,50 +137,29 @@ namespace demobtl2
             {
                 return;
             }
-            ListViewItem lvi = lvKH.SelectedItems[0];
-            string ma = lvi.SubItems[0].Text;
+            if (lvKH.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvKH.SelectedItems[0];
+                txtMaKH.Text = lvi.SubItems[0].Text;
+                txtTenKH.Text = lvi.SubItems[1].Text;
+                txtDiaChi.Text = lvi.SubItems[2].Text;
+                txtDienThoai.Text = lvi.SubItems[4].Text;
+                //MessageBox.Show(lvi.SubItems[3].Text);
+                if ((lvi.SubItems[3].Text)=="Nam")
+                {
+                    rdNam.Checked = true;
+                }
+                else
+                {
+                    rdNu.Checked = true;
+                }
+            }
             txtMaKH.Enabled = false;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
            // btnLuu.Enabled = true;
-            HienThiKH(ma);
+            //HienThiKH(ma);
         }
-        private void HienThiKH(string ma)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Khachhang";
-            cmd.Connection = cnn;
-            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = ma;
-            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "selectone";
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                txtMaKH.Text = rd.GetString(0);
-                txtTenKH.Text = rd.GetString(1);
-                txtDiaChi.Text = rd.GetString(2);
-                txtDienThoai.Text = rd.GetString(3);
-                if (rd.GetBoolean(4))
-                {
-                    rdNam.Checked=true;
-                }
-                else
-                {
-                    rdNu.Checked=true;
-                }
-            }
-           
-            rd.Close();
-        }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             txtMaKH.Clear();

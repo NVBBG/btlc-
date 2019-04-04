@@ -92,11 +92,15 @@ namespace demobtl2
             {
                 return;
             }
-            ListViewItem lvi = lvMatHang.SelectedItems[0];
-            string ma = lvi.SubItems[0].Text;
+            if(lvMatHang.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvMatHang.SelectedItems[0];
+                txtMaLoaiHang.Text = lvi.SubItems[1].Text;
+                txtTenLoaiHang.Text = lvi.SubItems[2].Text;
+            }
             txtMaLoaiHang.Enabled = false;
             //MessageBox.Show(ma);
-            HienThiLoai(ma);
+            //HienThiLoai(ma);
         }
         private void KiemTraTextBox()
         {
@@ -121,35 +125,6 @@ namespace demobtl2
                 return;
             }
         }
-        private void HienThiLoai(string ma)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "LoaiHang";
-            cmd.Connection = cnn;
-            cmd.Parameters.Add("@malh", SqlDbType.NVarChar).Value = ma;
-            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "selectone";
-            SqlDataReader rd = cmd.ExecuteReader();
-            //MessageBox.Show("ok");
-            while (rd.Read())
-            {
-                //MessageBox.Show(rd.GetString(0));
-                txtMaLoaiHang.Text = rd.GetString(0);
-                txtTenLoaiHang.Text = rd.GetString(1);
-            }
-            KiemTraTextBox();
-            rd.Close();
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
           

@@ -97,6 +97,49 @@ namespace demobtl2
             txtMaHD.Enabled = false;
             hiendlcbkhachhang();
             hienmahang();
+            hienlenlv();
+        }
+        private void hienlenlv()
+        {
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string query = "HoaDon";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "select";
+            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
+            lvHoaDon.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
+            while (rd.Read())
+            {
+                // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
+                string mahd = rd.GetString(0);
+                string manv = rd.GetString(1);
+                string makh = rd.GetString(2);
+                string mahang = rd.GetString(3);
+                DateTime dt = rd.GetDateTime(4);
+               double giaban = rd.GetDouble(5);
+                int sl = rd.GetInt32(6);
+                double giamgia = rd.GetDouble(7);
+                double tt = (giaban * sl) - ((giaban*sl)*(giamgia / 100));
+                //  Khai báo List View để hiển thị dữ liệu
+                ListViewItem lv = new ListViewItem(mahd);
+                lv.SubItems.Add(manv);
+                lv.SubItems.Add(makh);
+                lv.SubItems.Add(mahang);
+                lv.SubItems.Add(dt.ToString());
+                lv.SubItems.Add(giaban+"");
+                lv.SubItems.Add(sl+"");
+                lv.SubItems.Add(giamgia+"");
+                lv.SubItems.Add(tt+"");
+                lvHoaDon.Items.Add(lv);
+            }
+            rd.Close();
         }
         private void hiendlcbkhachhang()
         {
@@ -118,32 +161,39 @@ namespace demobtl2
                 DataTable tb = new DataTable();
                 ad.Fill(tb);
                 cbMaKH.DataSource = tb;
-                cbMaKH.DisplayMember = "sMaKH";
+                cbMaKH.DisplayMember = "sTenKH";
                 cbMaKH.ValueMember = "sMaKH";
         }
         private void hienthimotkhachhang()
         {
-            if (cnn == null)
+            try
             {
-                cnn = new SqlConnection(constr);
+                if (cnn == null)
+                {
+                    cnn = new SqlConnection(constr);
+                }
+                if (cnn.State == ConnectionState.Closed)
+                {
+                    cnn.Open();
+                }
+                string query = "KhachHang";
+                SqlCommand cmd = new SqlCommand(query, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue.ToString();
+                cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    txtTenKH.Text = rd.GetString(0);
+                    txtDiaChi.Text = rd.GetString(2);
+                    txtDienThoai.Text = rd.GetString(3);
+                }
+                rd.Close();
             }
-            if (cnn.State == ConnectionState.Closed)
+            catch (Exception ex)
             {
-                cnn.Open();
+                MessageBox.Show(ex.Message);
             }
-            string query = "KhachHang";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma",SqlDbType.NVarChar).Value = cbMaKH.SelectedValue.ToString();
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
-            {
-                txtTenKH.Text = rd.GetString(1);
-                txtDiaChi.Text = rd.GetString(2);
-                txtDienThoai.Text = rd.GetString(3);
-            }
-            rd.Close();
         }
         private void hienmahang()
         {
@@ -164,7 +214,7 @@ namespace demobtl2
             DataTable tb = new DataTable();
             ad.Fill(tb);
             cbMaHang.DataSource = tb;
-            cbMaHang.DisplayMember = "sMahang";
+            cbMaHang.DisplayMember = "sTenhang";
             cbMaHang.ValueMember = "sMahang";
         }
         private void hienmotmahang()
@@ -183,10 +233,14 @@ namespace demobtl2
             cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue.ToString();
             cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
             SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
+            if (rd.HasRows)
             {
-                txtTenHang.Text = rd.GetString(1);
+                while (rd.Read())
+                {
+                    txtTenHang.Text = rd.GetString(0);
+                }
             }
+            
             rd.Close();
         }
         private void btnDong_Click(object sender, EventArgs e)
@@ -216,7 +270,9 @@ namespace demobtl2
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            btnIn.Enabled = false;
+            btnSua.Enabled = false;
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -232,6 +288,38 @@ namespace demobtl2
         private void cbMaHang_TextChanged(object sender, EventArgs e)
         {
             hienmotmahang();
+        }
+       
+        private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvHoaDon.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            if (lvHoaDon.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi1 = lvHoaDon.SelectedItems[0];
+                txtMaHD.Text = lvi1.SubItems[0].Text;
+                cbMaNhanVien.Text = lvi1.SubItems[1].Text;
+                cbMaKH.Text = lvi1.SubItems[2].Text;
+                cbMaHang.Text = lvi1.SubItems[3].Text;
+                mskNgayBan.Text = lvi1.SubItems[4].Text;
+                txtDonGia.Text = lvi1.SubItems[5].Text;
+                txtSoLuong.Text = lvi1.SubItems[6].Text;
+                txtGiamGia.Text = lvi1.SubItems[7].Text;
+                txttt.Text = lvi1.SubItems[8].Text;
+                txtTenKH.Enabled = false;
+                txtTenNV.Enabled = false;
+                txtTenHang.Enabled = false;
+            }
+           // ListViewItem lvi = lvHoaDon.SelectedItems[0];
+            //string ma = lvi.SubItems[0].Text;
+            //.Enabled = false;
+            btnIn.Enabled = true;
+            btnSua.Enabled = true;
+           // btnXoa.Enabled = true;
+            // btnLuu.Enabled = true;
+            //HienThiHD(ma);
         }
     }
 }
