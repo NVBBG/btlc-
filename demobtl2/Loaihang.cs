@@ -26,7 +26,7 @@ namespace demobtl2
              if(txtMaLoaiHang.Text=="")
             {
                 btnSua.Enabled = false;
-                btnXoa.Enabled = false;
+                //btnXoa.Enabled = false;
                // btnLuu.Enabled = false;
             }
             Hien(constr,cnn);
@@ -107,13 +107,13 @@ namespace demobtl2
             if(txtMaLoaiHang.Text !=null )
             {
                 btnSua.Enabled = true;
-                btnXoa.Enabled = true;
+               // btnXoa.Enabled = true;
                // btnLuu.Enabled = true;
             }
             else
             {
                 btnSua.Enabled = false;
-                btnXoa.Enabled = false;
+                //btnXoa.Enabled = false;
               //  btnLuu.Enabled = false;
             }
         }
@@ -200,40 +200,8 @@ namespace demobtl2
             txtTenLoaiHang.Clear();
             txtMaLoaiHang.Enabled = true;
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+           // btnXoa.Enabled = false;
            // btnLuu.Enabled = false;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string ma = txtMaLoaiHang.Text;
-         
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "LoaiHang";
-            cmd.Connection = cnn;
-            cmd.Parameters.Add("@malh", SqlDbType.NVarChar).Value = ma;
-            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "delete"; 
-            
-            int ret = cmd.ExecuteNonQuery();
-            if (ret > 0)
-            {
-                Hien(constr, cnn);
-                MessageBox.Show("Xóa Thành Công!");
-            }
-            else
-            {
-                MessageBox.Show("Xóa Thất Bại!");
-            }
-            btnHuy.PerformClick();
         }
     }
 }

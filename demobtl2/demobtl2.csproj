@@ -391,5 +391,17 @@
   <ItemGroup>
     <None Include="Resources\icons8-filter-filled-1001.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter-List-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-conference-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\face-care-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

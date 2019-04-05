@@ -99,5 +99,81 @@ namespace demobtl2
             rd.Close();
             return ma;
         }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string query = "NhanVien";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ma",SqlDbType.VarChar).Value=txtMa.Text;
+            cmd.Parameters.AddWithValue("@ten",SqlDbType.VarChar).Value=txtHoTen.Text;
+            if (rdNam.Checked == true)
+            {
+                cmd.Parameters.AddWithValue("@gt", SqlDbType.Bit).Value = true;
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@gt", SqlDbType.Bit).Value = false;
+            }
+            cmd.Parameters.AddWithValue("@diachi",SqlDbType.VarChar).Value=txtDiaChi.Text;
+            cmd.Parameters.AddWithValue("@ngaysinh",SqlDbType.VarChar).Value=mksNgaySinh.Text;
+            cmd.Parameters.AddWithValue("@tk",SqlDbType.VarChar).Value=txtTk.Text;
+            cmd.Parameters.AddWithValue("@mk",SqlDbType.VarChar).Value=txtMkc.Text;
+            cmd.Parameters.AddWithValue("@sdt",SqlDbType.VarChar).Value=txtSdt.Text;
+            cmd.Parameters.AddWithValue("@trangthai",SqlDbType.VarChar).Value="nhanvien";
+            cmd.Parameters.AddWithValue("@action",SqlDbType.VarChar).Value = "update";
+            int i = cmd.ExecuteNonQuery();
+            if (i > 0)
+            {
+                MessageBox.Show("Cập nhật thông tin thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thông tin thất bại!");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtMkm.Text != txtXnmkm.Text)
+            {
+                MessageBox.Show("Mật khẩu xác nhận không hợp lệ");
+            }
+            else
+            {
+                if (cnn == null)
+                {
+                    cnn = new SqlConnection(constr);
+                }
+                if (cnn.State == ConnectionState.Closed)
+                {
+                    cnn.Open();
+                }
+                string query = "NhanVien";
+                SqlCommand cmd = new SqlCommand(query, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ma",SqlDbType.NVarChar).Value= txtMa.Text;
+                cmd.Parameters.AddWithValue("@tk",SqlDbType.NVarChar).Value= txtTk.Text;
+                cmd.Parameters.AddWithValue("@mk",SqlDbType.NVarChar).Value= txtMkm.Text;
+                cmd.Parameters.AddWithValue("@action",SqlDbType.NVarChar).Value= "doimk";
+                int i = cmd.ExecuteNonQuery();
+                if(i>0){
+                    MessageBox.Show("Đổi mật khẩu thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đổi mật khẩu thất bại");
+                }
+            }
+
+        }
     }
 }

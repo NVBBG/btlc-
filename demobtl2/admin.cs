@@ -16,5 +16,10 @@ namespace demobtl2
         {
             InitializeComponent();
         }
+
+        private void thêmThôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

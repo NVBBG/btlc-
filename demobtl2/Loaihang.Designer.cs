@@ -36,11 +36,10 @@
             this.lvMatHang = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -115,6 +114,19 @@
             this.columnHeader2.Text = "Tên Loại";
             this.columnHeader2.Width = 414;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
+            this.btnHuy.Location = new System.Drawing.Point(169, 333);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(56, 38);
+            this.btnHuy.TabIndex = 11;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // btnDong
             // 
             this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,26 +140,12 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Enabled = false;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::demobtl2.Properties.Resources.archive_remove;
-            this.btnXoa.Location = new System.Drawing.Point(180, 333);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(62, 38);
-            this.btnXoa.TabIndex = 8;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnSua
             // 
             this.btnSua.Enabled = false;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(108, 333);
+            this.btnSua.Location = new System.Drawing.Point(102, 333);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(66, 38);
             this.btnSua.TabIndex = 7;
@@ -169,19 +167,6 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnHuy
-            // 
-            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(248, 333);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(56, 38);
-            this.btnHuy.TabIndex = 11;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
             // Loaihang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,7 +175,6 @@
             this.ClientSize = new System.Drawing.Size(462, 404);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.lvMatHang);
@@ -217,7 +201,6 @@
         private System.Windows.Forms.ListView lvMatHang;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

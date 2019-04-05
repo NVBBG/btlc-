@@ -297,14 +297,14 @@ namespace demobtl2
             txtSdt.Clear();
             mskns.Clear();
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+           // btnXoa.Enabled = false;
             btnKhoa.Enabled = false;
             btnMoKhoa.Enabled = false;
         }
         private void Hiennut()
         {
             btnSua.Enabled = true;
-            btnXoa.Enabled = true;
+            //btnXoa.Enabled = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -467,34 +467,6 @@ namespace demobtl2
                 MessageBox.Show("Sửa thất bại");
             }
             lvNhanVien.Refresh();
-            hien(cnn, constr);
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string gt;
-            string query = "NhanVien";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = txtMaNv.Text;
-            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "delete";
-            int i = cmd.ExecuteNonQuery();
-            if (i > 0)
-            {
-                MessageBox.Show("Xóa thành công");
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-            }
             hien(cnn, constr);
         }
     }

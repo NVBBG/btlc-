@@ -43,16 +43,15 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.rdNam = new System.Windows.Forms.RadioButton();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnDong = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,72 +177,6 @@
             this.columnHeader5.Text = "Điện Thoại";
             this.columnHeader5.Width = 134;
             // 
-            // btnDong
-            // 
-            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDong.Image = global::demobtl2.Properties.Resources.application_exit5;
-            this.btnDong.Location = new System.Drawing.Point(597, 351);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 38);
-            this.btnDong.TabIndex = 11;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDong.UseVisualStyleBackColor = true;
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::demobtl2.Properties.Resources.archive_remove;
-            this.btnXoa.Location = new System.Drawing.Point(218, 351);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 38);
-            this.btnXoa.TabIndex = 9;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(131, 351);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(81, 38);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(39, 351);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(86, 38);
-            this.btnThem.TabIndex = 7;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(299, 351);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 38);
-            this.btnHuy.TabIndex = 10;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,6 +237,59 @@
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
+            this.btnHuy.Location = new System.Drawing.Point(218, 351);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 38);
+            this.btnHuy.TabIndex = 10;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnDong
+            // 
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDong.Image = global::demobtl2.Properties.Resources.application_exit5;
+            this.btnDong.Location = new System.Drawing.Point(597, 351);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(75, 38);
+            this.btnDong.TabIndex = 11;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
+            this.btnSua.Location = new System.Drawing.Point(131, 351);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(81, 38);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
+            this.btnThem.Location = new System.Drawing.Point(39, 351);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(86, 38);
+            this.btnThem.TabIndex = 7;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,7 +299,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.lvKH);
@@ -342,7 +327,6 @@
         private System.Windows.Forms.ListView lvKH;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

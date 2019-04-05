@@ -37,7 +37,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaSp = new System.Windows.Forms.TextBox();
-            this.btnThem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenMp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,11 +47,11 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -112,22 +111,10 @@
             // 
             // txtMaSp
             // 
-            this.txtMaSp.Location = new System.Drawing.Point(90, 43);
+            this.txtMaSp.Location = new System.Drawing.Point(90, 41);
             this.txtMaSp.Name = "txtMaSp";
             this.txtMaSp.Size = new System.Drawing.Size(230, 20);
             this.txtMaSp.TabIndex = 2;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(22, 27);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 41);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label2
             // 
@@ -157,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 92);
+            this.label4.Location = new System.Drawing.Point(17, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 8;
@@ -166,7 +153,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 119);
+            this.label5.Location = new System.Drawing.Point(18, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 9;
@@ -201,14 +188,14 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(90, 118);
+            this.txtSoLuong.Location = new System.Drawing.Point(90, 115);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(230, 20);
             this.txtSoLuong.TabIndex = 10;
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(90, 91);
+            this.txtDonGia.Location = new System.Drawing.Point(90, 90);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(230, 20);
             this.txtDonGia.TabIndex = 4;
@@ -223,46 +210,23 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Danh sách mỹ phẩm";
             // 
-            // btnSua
+            // groupBox2
             // 
-            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(102, 27);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 40);
-            this.btnSua.TabIndex = 7;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = global::demobtl2.Properties.Resources.archive_remove;
-            this.btnXoa.Location = new System.Drawing.Point(183, 27);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 40);
-            this.btnXoa.TabIndex = 8;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(22, 72);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 41);
-            this.btnHuy.TabIndex = 9;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            this.groupBox2.Controls.Add(this.btnThoat);
+            this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Controls.Add(this.btnHuy);
+            this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Location = new System.Drawing.Point(403, 30);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(282, 149);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tác Vụ";
             // 
             // btnThoat
             // 
             this.btnThoat.Image = global::demobtl2.Properties.Resources.dialog_error2;
-            this.btnThoat.Location = new System.Drawing.Point(103, 73);
+            this.btnThoat.Location = new System.Drawing.Point(149, 73);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 41);
             this.btnThoat.TabIndex = 10;
@@ -271,19 +235,41 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // groupBox2
+            // btnThem
             // 
-            this.groupBox2.Controls.Add(this.btnThoat);
-            this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Controls.Add(this.btnHuy);
-            this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Controls.Add(this.btnXoa);
-            this.groupBox2.Location = new System.Drawing.Point(403, 30);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(282, 149);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tác Vụ";
+            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
+            this.btnThem.Location = new System.Drawing.Point(68, 27);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 41);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
+            this.btnHuy.Location = new System.Drawing.Point(68, 73);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 41);
+            this.btnHuy.TabIndex = 9;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
+            this.btnSua.Location = new System.Drawing.Point(149, 27);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 40);
+            this.btnSua.TabIndex = 7;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // MyPham
             // 
@@ -323,7 +309,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ColumnHeader columnHeader1;

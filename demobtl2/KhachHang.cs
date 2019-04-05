@@ -37,15 +37,12 @@ namespace demobtl2
 
         private void KhachHang_Load(object sender, EventArgs e)
         {   
-
-            
             hien(constr, cnn);
             if (txtMaKH.Text == "")
-            {
-              
+            {  
                 btnSua.Enabled = false;
                 //btnLuu.Enabled = false;
-                btnXoa.Enabled = false;
+                //btnXoa.Enabled = false;
             }
            
             
@@ -156,9 +153,9 @@ namespace demobtl2
             }
             txtMaKH.Enabled = false;
             btnSua.Enabled = true;
-            btnXoa.Enabled = true;
+           // btnXoa.Enabled = true;
            // btnLuu.Enabled = true;
-            //HienThiKH(ma);
+           // HienThiKH(ma);
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
@@ -169,7 +166,7 @@ namespace demobtl2
             rdNam.Checked = false;
             rdNu.Checked = false;
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            //btnXoa.Enabled = false;
             //btnLuu.Enabled = false;
             txtMaKH.Enabled = true;
         }
@@ -273,49 +270,6 @@ namespace demobtl2
             }
             btnHuy.PerformClick();
         }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string ma = txtMaKH.Text;
-            string ten = txtTenKH.Text;
-            string diachi = txtDiaChi.Text;
-            string sdt = txtDienThoai.Text;
-            Boolean gioitinh;
-            if (rdNam.Checked == true)
-            {
-                gioitinh = true;
-            }
-            else
-            {
-                gioitinh = false;
-            }
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "Khachhang";
-            cmd.Connection = cnn;
-            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = ma;
-            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "delete";
-            int ret = cmd.ExecuteNonQuery();
-            if (ret > 0)
-            {
-                hien(constr, cnn);
-                MessageBox.Show("Xóa thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Xóa Thất Bại!");
-            }
-            btnHuy.PerformClick();
-        }
-
         private void txtMaKH_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

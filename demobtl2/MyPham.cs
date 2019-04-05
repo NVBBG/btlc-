@@ -82,7 +82,7 @@ namespace demobtl2
                 txtDonGia.Text = lvi.SubItems[4].Text;
             }
             btnSua.Enabled = true;
-            btnXoa.Enabled = true;
+            //btnXoa.Enabled = true;
            // HienThiMpMa(ma);
         }
         private void hienlencombobox()
@@ -115,7 +115,7 @@ namespace demobtl2
             txtTenMp.Clear();
             txtSoLuong.Clear();
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            //btnXoa.Enabled = false;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -193,32 +193,6 @@ namespace demobtl2
             hienthi();
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string query = "MyPham";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = txtMaSp.Text;
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "delete";
-            int i = cmd.ExecuteNonQuery();
-            if (i > 0)
-            {
-                MessageBox.Show("Xóa thành công");
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại");
-            }
-            btnHuy.PerformClick();
-            hienthi();
-        }
+       
     }
 }

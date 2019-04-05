@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýMặtHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHóaĐơnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiMỹPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýMỹPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,67 +52,66 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip2.Size = new System.Drawing.Size(884, 33);
+            this.menuStrip2.Size = new System.Drawing.Size(884, 26);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thoátToolStripMenuItem.Image = global::demobtl2.Properties.Resources.icons8_delete_100;
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            // 
             // quảnLýHóaĐơnToolStripMenuItem
             // 
-            this.quảnLýHóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýHóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýHóaĐơnToolStripMenuItem.Image = global::demobtl2.Properties.Resources.icons8_administrator_male_40;
             this.quảnLýHóaĐơnToolStripMenuItem.Name = "quảnLýHóaĐơnToolStripMenuItem";
-            this.quảnLýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(134, 27);
+            this.quảnLýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
             this.quảnLýHóaĐơnToolStripMenuItem.Text = "Thông tin cá nhân";
             this.quảnLýHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHóaĐơnToolStripMenuItem_Click);
             // 
             // quảnLýMặtHàngToolStripMenuItem
             // 
-            this.quảnLýMặtHàngToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýMặtHàngToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýMặtHàngToolStripMenuItem.Image = global::demobtl2.Properties.Resources.Filter_List_icon;
             this.quảnLýMặtHàngToolStripMenuItem.Name = "quảnLýMặtHàngToolStripMenuItem";
-            this.quảnLýMặtHàngToolStripMenuItem.Size = new System.Drawing.Size(79, 27);
+            this.quảnLýMặtHàngToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.quảnLýMặtHàngToolStripMenuItem.Text = "Thống kê";
             // 
             // quảnLýHóaĐơnToolStripMenuItem1
             // 
-            this.quảnLýHóaĐơnToolStripMenuItem1.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýHóaĐơnToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýHóaĐơnToolStripMenuItem1.Image = global::demobtl2.Properties.Resources.icons8_transaction_list_100;
             this.quảnLýHóaĐơnToolStripMenuItem1.Name = "quảnLýHóaĐơnToolStripMenuItem1";
-            this.quảnLýHóaĐơnToolStripMenuItem1.Size = new System.Drawing.Size(125, 27);
+            this.quảnLýHóaĐơnToolStripMenuItem1.Size = new System.Drawing.Size(133, 20);
             this.quảnLýHóaĐơnToolStripMenuItem1.Text = "Quản lý hóa đơn";
             // 
             // kháchHàngToolStripMenuItem
             // 
-            this.kháchHàngToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kháchHàngToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kháchHàngToolStripMenuItem.Image = global::demobtl2.Properties.Resources.icons8_conference_1001;
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 27);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
             this.kháchHàngToolStripMenuItem.Text = "Khách Hàng";
             // 
             // loạiMỹPhẩmToolStripMenuItem
             // 
-            this.loạiMỹPhẩmToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loạiMỹPhẩmToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loạiMỹPhẩmToolStripMenuItem.Image = global::demobtl2.Properties.Resources.icons8_new_product_128;
             this.loạiMỹPhẩmToolStripMenuItem.Name = "loạiMỹPhẩmToolStripMenuItem";
-            this.loạiMỹPhẩmToolStripMenuItem.Size = new System.Drawing.Size(110, 27);
+            this.loạiMỹPhẩmToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.loạiMỹPhẩmToolStripMenuItem.Text = "Loại Mỹ Phẩm";
             // 
             // quảnLýMỹPhẩmToolStripMenuItem
             // 
-            this.quảnLýMỹPhẩmToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýMỹPhẩmToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quảnLýMỹPhẩmToolStripMenuItem.Image = global::demobtl2.Properties.Resources.face_care_icon;
             this.quảnLýMỹPhẩmToolStripMenuItem.Name = "quảnLýMỹPhẩmToolStripMenuItem";
-            this.quảnLýMỹPhẩmToolStripMenuItem.Size = new System.Drawing.Size(136, 27);
+            this.quảnLýMỹPhẩmToolStripMenuItem.Size = new System.Drawing.Size(144, 20);
             this.quảnLýMỹPhẩmToolStripMenuItem.Text = "Quản Lý Mỹ Phẩm";
-            // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(58, 27);
-            this.thoátToolStripMenuItem.Text = "Thoát";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // NhanVienQuanLy
             // 
@@ -122,7 +120,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(241)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(884, 505);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
@@ -147,6 +144,5 @@
         private System.Windows.Forms.ToolStripMenuItem loạiMỹPhẩmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýMỹPhẩmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

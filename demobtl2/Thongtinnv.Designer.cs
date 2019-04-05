@@ -151,6 +151,7 @@
             this.btnCapNhat.Text = "Cập nhật thông tin";
             this.btnCapNhat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // txtDiaChi
             // 
@@ -292,6 +293,7 @@
             this.button2.Text = "Đổi mật khẩu";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label10
             // 

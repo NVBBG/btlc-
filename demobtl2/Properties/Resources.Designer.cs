@@ -343,6 +343,26 @@ namespace demobtl2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap face_care_icon {
+            get {
+                object obj = ResourceManager.GetObject("face-care-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Filter_List_icon {
+            get {
+                object obj = ResourceManager.GetObject("Filter-List-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap go_next {
             get {
                 object obj = ResourceManager.GetObject("go-next", resourceCulture);
@@ -416,6 +436,16 @@ namespace demobtl2.Properties {
         internal static System.Drawing.Bitmap icons8_conference_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-conference-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_conference_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-conference-1001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -716,6 +746,16 @@ namespace demobtl2.Properties {
         internal static System.Drawing.Bitmap preferences_desktop_user_password {
             get {
                 object obj = ResourceManager.GetObject("preferences-desktop-user-password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile_icon {
+            get {
+                object obj = ResourceManager.GetObject("profile-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

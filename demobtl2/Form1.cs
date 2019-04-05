@@ -171,6 +171,10 @@ namespace demobtl2
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            kiemtradangnhap();
+        }
+        private void kiemtradangnhap()
+        {
 
             if (cnn == null)
             {
@@ -183,7 +187,7 @@ namespace demobtl2
             string query = "NhanVien";
             string tk = txtTaiKhoan.Text;
             string mk = txtMatKhau.Text;
-            SqlCommand cmd = new SqlCommand(query,cnn);
+            SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@tk", SqlDbType.NVarChar).Value = tk;
             cmd.Parameters.AddWithValue("@mk", SqlDbType.NVarChar).Value = mk;
