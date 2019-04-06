@@ -50,8 +50,14 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnMoKhoa = new System.Windows.Forms.Button();
             this.txtXacNhanMK = new System.Windows.Forms.TextBox();
+            this.btnKhoa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.lvNhanVien = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,12 +69,8 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label10 = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnMoKhoa = new System.Windows.Forms.Button();
-            this.btnKhoa = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -289,12 +291,38 @@
             this.label9.Text = "Xác nhận mật khẩu";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // btnMoKhoa
+            // 
+            this.btnMoKhoa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoKhoa.Image = global::demobtl2.Properties.Resources.document_decrypt;
+            this.btnMoKhoa.Location = new System.Drawing.Point(269, 94);
+            this.btnMoKhoa.Name = "btnMoKhoa";
+            this.btnMoKhoa.Size = new System.Drawing.Size(93, 28);
+            this.btnMoKhoa.TabIndex = 12;
+            this.btnMoKhoa.Text = "Mở khóa";
+            this.btnMoKhoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMoKhoa.UseVisualStyleBackColor = true;
+            this.btnMoKhoa.Click += new System.EventHandler(this.btnMoKhoa_Click);
+            // 
             // txtXacNhanMK
             // 
             this.txtXacNhanMK.Location = new System.Drawing.Point(126, 67);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(236, 20);
             this.txtXacNhanMK.TabIndex = 10;
+            // 
+            // btnKhoa
+            // 
+            this.btnKhoa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhoa.Image = global::demobtl2.Properties.Resources.document_encrypt1;
+            this.btnKhoa.Location = new System.Drawing.Point(186, 94);
+            this.btnKhoa.Name = "btnKhoa";
+            this.btnKhoa.Size = new System.Drawing.Size(77, 28);
+            this.btnKhoa.TabIndex = 11;
+            this.btnKhoa.Text = "Khóa";
+            this.btnKhoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhoa.UseVisualStyleBackColor = true;
+            this.btnKhoa.Click += new System.EventHandler(this.btnKhoa_Click);
             // 
             // groupBox3
             // 
@@ -309,6 +337,53 @@
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tác vụ";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = global::demobtl2.Properties.Resources.application_exit5;
+            this.btnThoat.Location = new System.Drawing.Point(313, 17);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(74, 32);
+            this.btnThoat.TabIndex = 17;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
+            this.btnHuy.Location = new System.Drawing.Point(166, 17);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(57, 32);
+            this.btnHuy.TabIndex = 16;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
+            this.btnSua.Location = new System.Drawing.Point(95, 17);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(65, 32);
+            this.btnSua.TabIndex = 14;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
+            this.btnThem.Location = new System.Drawing.Point(14, 17);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 32);
+            this.btnThem.TabIndex = 13;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lvNhanVien
             // 
@@ -381,84 +456,28 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(253, 243);
+            this.label10.Location = new System.Drawing.Point(147, 242);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(196, 25);
             this.label10.TabIndex = 21;
             this.label10.Text = "Danh sách nhân viên";
             // 
-            // btnThoat
+            // label12
             // 
-            this.btnThoat.Image = global::demobtl2.Properties.Resources.application_exit5;
-            this.btnThoat.Location = new System.Drawing.Point(313, 17);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(74, 32);
-            this.btnThoat.TabIndex = 17;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(454, 248);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Tìm kiếm";
             // 
-            // btnHuy
+            // txtTimKiem
             // 
-            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(166, 17);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(57, 32);
-            this.btnHuy.TabIndex = 16;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(95, 17);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(65, 32);
-            this.btnSua.TabIndex = 14;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(14, 17);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 32);
-            this.btnThem.TabIndex = 13;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnMoKhoa
-            // 
-            this.btnMoKhoa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoKhoa.Image = global::demobtl2.Properties.Resources.document_decrypt;
-            this.btnMoKhoa.Location = new System.Drawing.Point(269, 94);
-            this.btnMoKhoa.Name = "btnMoKhoa";
-            this.btnMoKhoa.Size = new System.Drawing.Size(93, 28);
-            this.btnMoKhoa.TabIndex = 12;
-            this.btnMoKhoa.Text = "Mở khóa";
-            this.btnMoKhoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMoKhoa.UseVisualStyleBackColor = true;
-            this.btnMoKhoa.Click += new System.EventHandler(this.btnMoKhoa_Click);
-            // 
-            // btnKhoa
-            // 
-            this.btnKhoa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhoa.Image = global::demobtl2.Properties.Resources.document_encrypt1;
-            this.btnKhoa.Location = new System.Drawing.Point(186, 94);
-            this.btnKhoa.Name = "btnKhoa";
-            this.btnKhoa.Size = new System.Drawing.Size(77, 28);
-            this.btnKhoa.TabIndex = 11;
-            this.btnKhoa.Text = "Khóa";
-            this.btnKhoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKhoa.UseVisualStyleBackColor = true;
-            this.btnKhoa.Click += new System.EventHandler(this.btnKhoa_Click);
+            this.txtTimKiem.Location = new System.Drawing.Point(510, 245);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(184, 20);
+            this.txtTimKiem.TabIndex = 23;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // ThemNV
             // 
@@ -466,6 +485,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(717, 470);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lvNhanVien);
             this.Controls.Add(this.groupBox3);
@@ -528,5 +549,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtSdt;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtTimKiem;
     }
 }

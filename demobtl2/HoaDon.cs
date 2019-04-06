@@ -92,6 +92,7 @@ namespace demobtl2
 
         private void HoaDon_Load(object sender, EventArgs e)
         {
+            
             string tiento = "HD";
             txtMaHD.Text = CreateKey(tiento);
             ///txtMaHD.Enabled = false;
@@ -104,14 +105,7 @@ namespace demobtl2
         }
         private void hienlenlv()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string query = "HoaDon";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -147,14 +141,7 @@ namespace demobtl2
         private void hiendlcbkhachhang()
         {
 
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string query = "KhachHang";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -171,14 +158,7 @@ namespace demobtl2
         {
             try
             {
-                if (cnn == null)
-                {
-                    cnn = new SqlConnection(constr);
-                }
-                if (cnn.State == ConnectionState.Closed)
-                {
-                    cnn.Open();
-                }
+                Connect();
                 string query = "KhachHang";
                 SqlCommand cmd = new SqlCommand(query, cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -200,14 +180,7 @@ namespace demobtl2
         }
         private void hienmahang()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string query = "MyPham";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -222,14 +195,7 @@ namespace demobtl2
         }
         private void hienmotmahang()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string query = "MyPham";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -268,14 +234,7 @@ namespace demobtl2
         }
         private void Action(string query, string action, string loi, string thanhcong)
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             //MessageBox.Show(cbMaNhanVien.Text);
 
             SqlCommand cmd = new SqlCommand(query, cnn);
@@ -284,7 +243,7 @@ namespace demobtl2
             cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = txtMaNV.Text;
             cmd.Parameters.AddWithValue("@makh", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue;
             cmd.Parameters.AddWithValue("@mahang", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue;
-            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.Text;
+            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.TextMaskFormat;
             cmd.Parameters.AddWithValue("@soluong", SqlDbType.Int).Value = txtSoLuong.Text;
             cmd.Parameters.AddWithValue("@giaban", SqlDbType.Float).Value = txtDonGia.Text;
             cmd.Parameters.AddWithValue("@giamgia", SqlDbType.Float).Value = txtGiamGia.Text;
@@ -311,19 +270,10 @@ namespace demobtl2
         }
         public void hienmanv()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string query = "NhanVien";
+            Connect();
+            string query = "sp_nvdn";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.VarChar).Value = laythongtindn();
-            cmd.Parameters.AddWithValue("@action", SqlDbType.VarChar).Value = "selectone";
             SqlDataReader rd = cmd.ExecuteReader();
             string ma = null;
             string ten = null;
@@ -336,30 +286,10 @@ namespace demobtl2
             txtTenNV.Text = ten;
             rd.Close();
         }
-        public string laythongtindn()
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string query = "get_session";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataReader rd = cmd.ExecuteReader();
-            string ma = null;
-            while (rd.Read())
-            {
-                ma = rd.GetString(0);
-            }
-            rd.Close();
-            return ma;
-        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(cbMaHang.SelectedValue.ToString());
             btnIn.Enabled = false;
             btnSua.Enabled = false;
         }
@@ -414,11 +344,149 @@ namespace demobtl2
 
         private void txtGiamGia_TextChanged(object sender, EventArgs e)
         {
-            double giaban = Double.Parse(txtDonGia.Text);
-            int sl = Int32.Parse(txtSoLuong.Text);
-            double giamgia = Int32.Parse(txtGiamGia.Text);
+            tinhtongtien();
+        }
+        private double kiemtradongia()
+        {
+            Connect();
+            string query = "sp_ktdg";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue.ToString();
+            SqlDataReader rd = cmd.ExecuteReader();
+            double dg=0;
+            while(rd.Read())
+            {
+                dg = rd.GetDouble(0);
+            }
+            rd.Close();
+            return dg;
+        }
+        public void Connect()
+        {
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+        }
+        private int kiemtrasoluong()
+        {
+            Connect();
+            string query = "sp_ktsl";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue.ToString();
+            SqlDataReader rd = cmd.ExecuteReader();
+            //MessageBox.Show(rd.GetInt32(0).ToString());
+            int sl=0;
+            while (rd.Read())
+            {
+                 sl = rd.GetInt32(0);
+            }
+            rd.Close();
+            return sl;
+        }
+        private void tinhtongtien()
+        {
+            int sl = 0;
+            double giamgia = 0;
+            double giaban = 0;
+            if (txtDonGia.Text.Trim().Length == 0)
+            {
+                giaban = 0;
+            }
+            else
+            {
+                giaban = Double.Parse(txtDonGia.Text);
+            }
+            if (txtSoLuong.Text.Trim().Length == 0)
+            {
+                sl = 0;
+            }
+            else
+            {
+                sl = Int32.Parse(txtSoLuong.Text);
+            }
+            if (txtGiamGia.Text.Trim().Length == 0)
+            {
+                giamgia = 0;
+            }
+            else
+            {
+                giamgia = Int32.Parse(txtGiamGia.Text);
+            }
+            if(sl < 0 || sl > kiemtrasoluong())
+            {
+                MessageBox.Show("Số lượng phải là số nguyên dương và phải nhỏ hơn số lượng hiện có. Số lượng hàng hiện có:"+kiemtrasoluong());
+                txtSoLuong.Clear();
+            }
+            if (giaban > kiemtradongia())
+            {
+                MessageBox.Show("Giá bán phải lớn hơn giá nhập vào.Giá nhập vào hiện tại :"+kiemtradongia());
+                txtDonGia.Clear();
+            }
+            if (giamgia <0 || giamgia >100)
+            {
+                MessageBox.Show("Giảm giá phù hợp trong khoảng 0-100");
+            }
             double tt = (giaban * sl) - ((giaban * sl) * (giamgia / 100));
             txttt.Text = tt.ToString();
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            hientimkiemhoadon();
+        }
+
+        private void hientimkiemhoadon()
+        {
+            Connect();
+            string query = "HoaDon";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtTimKiem.Text;
+            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "search";
+            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
+            lvHoaDon.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
+            while (rd.Read())
+            {
+                // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
+                string mahd = rd.GetString(0);
+                string manv = rd.GetString(1);
+                string makh = rd.GetString(2);
+                string mahang = rd.GetString(3);
+                DateTime dt = rd.GetDateTime(4);
+                double giaban = rd.GetDouble(5);
+                int sl = rd.GetInt32(6);
+                double giamgia = rd.GetDouble(7);
+                double tt = (giaban * sl) - ((giaban * sl) * (giamgia / 100));
+                //  Khai báo List View để hiển thị dữ liệu
+                ListViewItem lv = new ListViewItem(mahd);
+                lv.SubItems.Add(manv);
+                lv.SubItems.Add(makh);
+                lv.SubItems.Add(mahang);
+                lv.SubItems.Add(dt.ToString());
+                lv.SubItems.Add(giaban + "");
+                lv.SubItems.Add(sl + "");
+                lv.SubItems.Add(giamgia + "");
+                lv.SubItems.Add(tt + "");
+                lvHoaDon.Items.Add(lv);
+            }
+            rd.Close();
+        }
+
+        private void txtDonGia_TextChanged(object sender, EventArgs e)
+        {
+            tinhtongtien();
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            tinhtongtien();
         }
     }
 }

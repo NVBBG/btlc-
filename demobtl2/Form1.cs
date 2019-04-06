@@ -78,6 +78,8 @@ namespace demobtl2
             {
                 btnDangNhap.Enabled = false;
             }
+            //string hello = "coa to ndm";
+           // MyPham my = new MyPham(hello);
         }
 
         private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
@@ -89,7 +91,7 @@ namespace demobtl2
         private void txtTaiKhoan_KeyUp(object sender, KeyEventArgs e)
         {
 
-            btnDangNhap.PerformClick();
+            //btnDangNhap.PerformClick();
             if (string.IsNullOrWhiteSpace(txtTaiKhoan.Text)) {
                 errorProvider1.SetError(txtTaiKhoan, "Tên đăng nhập không được bỏ trống!!");
                 btnDangNhap.Enabled = false;
@@ -171,11 +173,10 @@ namespace demobtl2
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            kiemtradangnhap();
+            kiemtradangnhap();  
         }
         private void kiemtradangnhap()
         {
-
             if (cnn == null)
             {
                 cnn = new SqlConnection(constr);
@@ -200,6 +201,7 @@ namespace demobtl2
             }
             else
             {
+                rd.Close();
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
                 txtTaiKhoan.Focus();
             }

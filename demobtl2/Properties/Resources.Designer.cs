@@ -343,6 +343,16 @@ namespace demobtl2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_select_all {
+            get {
+                object obj = ResourceManager.GetObject("edit-select-all", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap face_care_icon {
             get {
                 object obj = ResourceManager.GetObject("face-care-icon", resourceCulture);
@@ -393,6 +403,26 @@ namespace demobtl2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bar_chart_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bar-chart-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_bill_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bill-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_calendar_30_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-calendar-30-100", resourceCulture);
@@ -433,6 +463,16 @@ namespace demobtl2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_user_male_skin_type_4_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-user-male-skin-type-4-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_conference_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-conference-100", resourceCulture);
@@ -463,6 +503,16 @@ namespace demobtl2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_done_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-done-64", resourceCulture);
@@ -476,6 +526,16 @@ namespace demobtl2.Properties {
         internal static System.Drawing.Bitmap icons8_done_641 {
             get {
                 object obj = ResourceManager.GetObject("icons8-done-641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_face_powder_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-face-powder-22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -756,6 +816,16 @@ namespace demobtl2.Properties {
         internal static System.Drawing.Bitmap profile_icon {
             get {
                 object obj = ResourceManager.GetObject("profile-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap resource_group {
+            get {
+                object obj = ResourceManager.GetObject("resource-group", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

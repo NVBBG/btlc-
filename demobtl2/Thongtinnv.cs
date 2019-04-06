@@ -50,11 +50,9 @@ namespace demobtl2
             {
                 cnn.Open();
             }
-            string query = "NhanVien";
+            string query = "sp_nvdn";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = laythongtindn();
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
@@ -63,11 +61,11 @@ namespace demobtl2
                 txtHoTen.Text = rd.GetString(1);
                 if (rd.GetBoolean(2))
                 {
-                    rdNu.Checked = true;
+                    rdNam.Checked = true;
                 }
                 else
                 {
-                    rdNam.Checked = true;
+                    rdNu.Checked = true;
                 }
                 txtDiaChi.Text = rd.GetString(3);
                 mksNgaySinh.Text = rd.GetDateTime(4) + "";
@@ -76,28 +74,6 @@ namespace demobtl2
                 txtMkc.Text = rd.GetString(6);
             }
             rd.Close();
-        }
-        public string laythongtindn()
-        {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-            string query = "get_session";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataReader rd = cmd.ExecuteReader();
-            string ma = null;
-            while (rd.Read())
-            {
-                ma = rd.GetString(0);
-            }
-            rd.Close();
-            return ma;
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

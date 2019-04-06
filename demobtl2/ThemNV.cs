@@ -21,7 +21,7 @@ namespace demobtl2
         string constr = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
         //string constr = "Data Source=MRBAO;Initial Catalog=QLBHMP;Integrated Security=True";
         SqlConnection cnn = null;
-        private void hien(SqlConnection cnn, string constr)
+        private void hien()
         {
             // checkcnn();
             if (cnn == null)
@@ -118,12 +118,25 @@ namespace demobtl2
             return h;
         }
 
-        private void ThemNV_Load(object sender, EventArgs e)
+        private bool CheckExistForm(string name)
         {
+            bool check = false;
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name == name)
+                {
+                    check = true;
+                    break;
+                }
+            }
+            return check;
+        }
+        private void ThemNV_Load(object sender, EventArgs e)
+        { 
             string tiento = "NV";
             btnHuy.PerformClick();
             txtMaNv.Text = CreateKey(tiento);
-            hien(cnn, constr);
+            hien();
         }
         public static string CreateKey(string tiento)
         {
@@ -300,6 +313,8 @@ namespace demobtl2
            // btnXoa.Enabled = false;
             btnKhoa.Enabled = false;
             btnMoKhoa.Enabled = false;
+            string tiento = "NV";
+            txtMaNv.Text = CreateKey(tiento);
         }
         private void Hiennut()
         {
@@ -357,7 +372,7 @@ namespace demobtl2
                 MessageBox.Show("Thêm thất bại");
             }
             btnHuy.PerformClick();
-            hien(cnn, constr);
+            hien();
         }
 
         private void btnKhoa_Click(object sender, EventArgs e)
@@ -415,7 +430,7 @@ namespace demobtl2
                 //MessageBox.Show("Khóa tài khoản thất bại");
             }
             //btnHuy.PerformClick();
-            hien(cnn, constr);
+            hien();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -467,7 +482,73 @@ namespace demobtl2
                 MessageBox.Show("Sửa thất bại");
             }
             lvNhanVien.Refresh();
-            hien(cnn, constr);
+            hien();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if(txtTimKiem.Text.Trim().Length == 0)
+            {
+                hien();
+            }
+            else
+            {
+                timkiemnhanvien();
+            }
+            
+        }
+
+        private void timkiemnhanvien()
+        {
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string gt;
+            string query = "NhanVien";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "search";
+            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = txtTimKiem.Text;
+            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
+            lvNhanVien.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
+            while (rd.Read())
+            {
+                // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
+                string ma = rd.GetString(0);
+                string ten = rd.GetString(1);
+                // MessageBox.Show(rd.GetBoolean(2).ToString());
+                Boolean gioitinh = rd.GetBoolean(2);
+                string diachi = rd.GetString(3);
+                DateTime ns = rd.GetDateTime(4);
+                string tk = rd.GetString(5);
+                string mk = rd.GetString(6);
+                string tinhtrang = rd.GetString(7);
+                string sdt = rd.GetString(8);
+                //  Khai báo List View để hiển thị dữ liệu
+                ListViewItem lv = new ListViewItem(ma);
+                lv.SubItems.Add(ten);
+                if (gioitinh)
+                {
+                    lv.SubItems.Add("Nam");
+                }
+                else
+                {
+                    lv.SubItems.Add("Nữ");
+                }
+                lv.SubItems.Add(diachi);
+                lv.SubItems.Add(ns.ToString());
+                lv.SubItems.Add(tk);
+                lv.SubItems.Add(mk);
+                lv.SubItems.Add(tinhtrang);
+                lv.SubItems.Add(sdt);
+                lvNhanVien.Items.Add(lv);
+            }
+            rd.Close();
         }
     }
 }

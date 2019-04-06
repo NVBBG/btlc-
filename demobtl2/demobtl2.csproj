@@ -60,6 +60,12 @@
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="danhsachloaihang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>danhsachloaihang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inloaihang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inloaihang.Designer.cs">
+      <DependentUpon>inloaihang.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs">
       <SubType>Form</SubType>
@@ -125,11 +137,18 @@
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="danhsachloaihang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>danhsachloaihang.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inloaihang.resx">
+      <DependentUpon>inloaihang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
@@ -402,6 +421,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\face-care-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resource-group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-select-all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-circled-user-male-skin-type-4-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bill-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-face-powder-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bar-chart-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

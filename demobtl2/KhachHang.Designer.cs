@@ -48,10 +48,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.rdNam = new System.Windows.Forms.RadioButton();
+            this.txtTimkiem = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +69,7 @@
             // 
             // txtMaKH
             // 
+            this.txtMaKH.Enabled = false;
             this.txtMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKH.Location = new System.Drawing.Point(131, 23);
             this.txtMaKH.Name = "txtMaKH";
@@ -144,9 +147,9 @@
             this.lvKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvKH.FullRowSelect = true;
             this.lvKH.GridLines = true;
-            this.lvKH.Location = new System.Drawing.Point(39, 167);
+            this.lvKH.Location = new System.Drawing.Point(39, 194);
             this.lvKH.Name = "lvKH";
-            this.lvKH.Size = new System.Drawing.Size(633, 178);
+            this.lvKH.Size = new System.Drawing.Size(633, 173);
             this.lvKH.TabIndex = 9;
             this.lvKH.UseCompatibleStateImageBehavior = false;
             this.lvKH.View = System.Windows.Forms.View.Details;
@@ -187,8 +190,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtTimkiem);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.rdNu);
+            this.groupBox2.Controls.Add(this.btnDong);
             this.groupBox2.Controls.Add(this.rdNam);
             this.groupBox2.Controls.Add(this.txtDiaChi);
             this.groupBox2.Controls.Add(this.label4);
@@ -200,7 +209,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(39, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(633, 108);
+            this.groupBox2.Size = new System.Drawing.Size(633, 135);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
@@ -237,13 +246,57 @@
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
             // 
+            // txtTimkiem
+            // 
+            this.txtTimkiem.Location = new System.Drawing.Point(426, 100);
+            this.txtTimkiem.Name = "txtTimkiem";
+            this.txtTimkiem.Size = new System.Drawing.Size(174, 20);
+            this.txtTimkiem.TabIndex = 22;
+            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(365, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Tìm kiếm";
+            // 
+            // btnThem
+            // 
+            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
+            this.btnThem.Location = new System.Drawing.Point(43, 94);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(65, 31);
+            this.btnThem.TabIndex = 7;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
+            this.btnSua.Location = new System.Drawing.Point(115, 94);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(64, 31);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(218, 351);
+            this.btnHuy.Location = new System.Drawing.Point(185, 94);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 38);
+            this.btnHuy.Size = new System.Drawing.Size(57, 31);
             this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -254,53 +307,22 @@
             // 
             this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDong.Image = global::demobtl2.Properties.Resources.application_exit5;
-            this.btnDong.Location = new System.Drawing.Point(597, 351);
+            this.btnDong.Location = new System.Drawing.Point(248, 94);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 38);
+            this.btnDong.Size = new System.Drawing.Size(65, 31);
             this.btnDong.TabIndex = 11;
             this.btnDong.Text = "Đóng";
             this.btnDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(131, 351);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(81, 38);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(39, 351);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(86, 38);
-            this.btnThem.TabIndex = 7;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(712, 417);
+            this.ClientSize = new System.Drawing.Size(712, 380);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.lvKH);
             this.Controls.Add(this.label5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -339,5 +361,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton rdNu;
         private System.Windows.Forms.RadioButton rdNam;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTimkiem;
     }
 }
