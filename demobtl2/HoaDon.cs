@@ -96,17 +96,18 @@ namespace demobtl2
             string tiento = "HD";
             txtMaHD.Text = CreateKey(tiento);
             ///txtMaHD.Enabled = false;
-            hiendlcbkhachhang();
-            hienmahang();
+           hiendlcbkhachhang();
+            
             hienlenlv();
             txtMaNV.Enabled = false;
             txtTenNV.Enabled = false;
             hienmanv();
+            btnHuy.PerformClick();
         }
         private void hienlenlv()
         {
             Connect();
-            string query = "HoaDon";
+            string query = "tthoadon";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "select";
@@ -114,26 +115,17 @@ namespace demobtl2
             lvHoaDon.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
             while (rd.Read())
             {
-                // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
+                //MessageBox.Show(rd.GetString(1));
                 string mahd = rd.GetString(0);
                 string manv = rd.GetString(1);
+                DateTime dt = rd.GetDateTime(3);
                 string makh = rd.GetString(2);
-                string mahang = rd.GetString(3);
-                DateTime dt = rd.GetDateTime(4);
-                double giaban = rd.GetDouble(5);
-                int sl = rd.GetInt32(6);
-                double giamgia = rd.GetDouble(7);
-                double tt = (giaban * sl) - ((giaban * sl) * (giamgia / 100));
+                           
                 //  Khai báo List View để hiển thị dữ liệu
                 ListViewItem lv = new ListViewItem(mahd);
                 lv.SubItems.Add(manv);
                 lv.SubItems.Add(makh);
-                lv.SubItems.Add(mahang);
                 lv.SubItems.Add(dt.ToString());
-                lv.SubItems.Add(giaban + "");
-                lv.SubItems.Add(sl + "");
-                lv.SubItems.Add(giamgia + "");
-                lv.SubItems.Add(tt + "");
                 lvHoaDon.Items.Add(lv);
             }
             rd.Close();
@@ -178,40 +170,8 @@ namespace demobtl2
                 MessageBox.Show(ex.Message);
             }
         }
-        private void hienmahang()
-        {
-            Connect();
-            string query = "MyPham";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.AddWithValue("@ma",SqlDbType.NVarChar);
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "select";
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            DataTable tb = new DataTable();
-            ad.Fill(tb);
-            cbMaHang.DataSource = tb;
-            cbMaHang.DisplayMember = "sTenhang";
-            cbMaHang.ValueMember = "sMahang";
-        }
-        private void hienmotmahang()
-        {
-            Connect();
-            string query = "MyPham";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue.ToString();
-            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
-            SqlDataReader rd = cmd.ExecuteReader();
-            if (rd.HasRows)
-            {
-                while (rd.Read())
-                {
-                    // txtTenHang.Text = rd.GetString(0);
-                }
-            }
-
-            rd.Close();
-        }
+        
+        
         private void btnDong_Click(object sender, EventArgs e)
         {
             DialogResult rt = MessageBox.Show("Bạn có muốn thoát không ?", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -224,29 +184,17 @@ namespace demobtl2
                 return;
             }
         }
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            string query = "HoaDon";
-            string action = "insert";
-            string loi = "Thêm không thành công";
-            string thanhcong = "Thêm thành công";
-            Action(query, action, loi, thanhcong);
-        }
         private void Action(string query, string action, string loi, string thanhcong)
         {
             Connect();
             //MessageBox.Show(cbMaNhanVien.Text);
-
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
+            MessageBox.Show(mskNgayBan.Text);
             cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
             cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = txtMaNV.Text;
+            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.Text;
             cmd.Parameters.AddWithValue("@makh", SqlDbType.NVarChar).Value = cbMaKH.SelectedValue;
-            cmd.Parameters.AddWithValue("@mahang", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue;
-            cmd.Parameters.AddWithValue("@ngayban", SqlDbType.DateTime).Value = mskNgayBan.TextMaskFormat;
-            cmd.Parameters.AddWithValue("@soluong", SqlDbType.Int).Value = txtSoLuong.Text;
-            cmd.Parameters.AddWithValue("@giaban", SqlDbType.Float).Value = txtDonGia.Text;
-            cmd.Parameters.AddWithValue("@giamgia", SqlDbType.Float).Value = txtGiamGia.Text;
             cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = action;
             //SqlDataReader rd = cmd.ExecuteReader();
             int i = cmd.ExecuteNonQuery();
@@ -262,7 +210,7 @@ namespace demobtl2
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string query = "HoaDon";
+            string query = "tthoadon";
             string action = "update";
             string loi = "Sửa không thành công";
             string thanhcong = "Sửa thành công";
@@ -287,26 +235,9 @@ namespace demobtl2
             rd.Close();
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(cbMaHang.SelectedValue.ToString());
-            btnIn.Enabled = false;
-            btnSua.Enabled = false;
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbMaKH_TextChanged(object sender, EventArgs e)
         {
             hienthimotkhachhang();
-        }
-
-        private void cbMaHang_TextChanged(object sender, EventArgs e)
-        {
-            hienmotmahang();
         }
 
         private void lvHoaDon_SelectedIndexChanged(object sender, EventArgs e)
@@ -318,49 +249,16 @@ namespace demobtl2
             if (lvHoaDon.SelectedItems.Count > 0)
             {
                 txtMaHD.Enabled = false;
+                btnSua.Enabled = true;
+                btnIn.Enabled = true;
+                btnXemCT.Enabled = true;
                 ListViewItem lvi1 = lvHoaDon.SelectedItems[0];
                 txtMaHD.Text = lvi1.SubItems[0].Text;
                 txtTenNV.Text = lvi1.SubItems[1].Text;
+                mskNgayBan.Text = lvi1.SubItems[3].Text;
                 cbMaKH.Text = lvi1.SubItems[2].Text;
-                cbMaHang.Text = lvi1.SubItems[3].Text;
-                mskNgayBan.Text = lvi1.SubItems[4].Text;
-                txtDonGia.Text = lvi1.SubItems[5].Text;
-                txtSoLuong.Text = lvi1.SubItems[6].Text;
-                txtGiamGia.Text = lvi1.SubItems[7].Text;
-                txttt.Text = lvi1.SubItems[8].Text;
-                //txtTenKH.Enabled = false;
                 txtTenNV.Enabled = false;
-                //txtTenHang.Enabled = false;
-            }
-            // ListViewItem lvi = lvHoaDon.SelectedItems[0];
-            //string ma = lvi.SubItems[0].Text;
-            //.Enabled = false;
-            btnIn.Enabled = true;
-            btnSua.Enabled = true;
-            // btnXoa.Enabled = true;
-            // btnLuu.Enabled = true;
-            //HienThiHD(ma);
-        }
-
-        private void txtGiamGia_TextChanged(object sender, EventArgs e)
-        {
-            tinhtongtien();
-        }
-        private double kiemtradongia()
-        {
-            Connect();
-            string query = "sp_ktdg";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue.ToString();
-            SqlDataReader rd = cmd.ExecuteReader();
-            double dg=0;
-            while(rd.Read())
-            {
-                dg = rd.GetDouble(0);
-            }
-            rd.Close();
-            return dg;
+            }   
         }
         public void Connect()
         {
@@ -373,82 +271,14 @@ namespace demobtl2
                 cnn.Open();
             }
         }
-        private int kiemtrasoluong()
-        {
-            Connect();
-            string query = "sp_ktsl";
-            SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ma", SqlDbType.NVarChar).Value = cbMaHang.SelectedValue.ToString();
-            SqlDataReader rd = cmd.ExecuteReader();
-            //MessageBox.Show(rd.GetInt32(0).ToString());
-            int sl=0;
-            while (rd.Read())
-            {
-                 sl = rd.GetInt32(0);
-            }
-            rd.Close();
-            return sl;
-        }
-        private void tinhtongtien()
-        {
-            int sl = 0;
-            double giamgia = 0;
-            double giaban = 0;
-            if (txtDonGia.Text.Trim().Length == 0)
-            {
-                giaban = 0;
-            }
-            else
-            {
-                giaban = Double.Parse(txtDonGia.Text);
-            }
-            if (txtSoLuong.Text.Trim().Length == 0)
-            {
-                sl = 0;
-            }
-            else
-            {
-                sl = Int32.Parse(txtSoLuong.Text);
-            }
-            if (txtGiamGia.Text.Trim().Length == 0)
-            {
-                giamgia = 0;
-            }
-            else
-            {
-                giamgia = Int32.Parse(txtGiamGia.Text);
-            }
-            if(sl < 0 || sl > kiemtrasoluong())
-            {
-                MessageBox.Show("Số lượng phải là số nguyên dương và phải nhỏ hơn số lượng hiện có. Số lượng hàng hiện có:"+kiemtrasoluong());
-                txtSoLuong.Clear();
-            }
-            if (giaban > kiemtradongia())
-            {
-                MessageBox.Show("Giá bán phải lớn hơn giá nhập vào.Giá nhập vào hiện tại :"+kiemtradongia());
-                txtDonGia.Clear();
-            }
-            if (giamgia <0 || giamgia >100)
-            {
-                MessageBox.Show("Giảm giá phù hợp trong khoảng 0-100");
-            }
-            double tt = (giaban * sl) - ((giaban * sl) * (giamgia / 100));
-            txttt.Text = tt.ToString();
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            hientimkiemhoadon();
-        }
-
+       
         private void hientimkiemhoadon()
         {
             Connect();
-            string query = "HoaDon";
+            string query = "tthoadon";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtTimKiem.Text;
+            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtTimkiem.Text;
             cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "search";
             SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
             lvHoaDon.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
@@ -457,36 +287,92 @@ namespace demobtl2
                 // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
                 string mahd = rd.GetString(0);
                 string manv = rd.GetString(1);
+                DateTime dt = rd.GetDateTime(3);
                 string makh = rd.GetString(2);
-                string mahang = rd.GetString(3);
-                DateTime dt = rd.GetDateTime(4);
-                double giaban = rd.GetDouble(5);
-                int sl = rd.GetInt32(6);
-                double giamgia = rd.GetDouble(7);
-                double tt = (giaban * sl) - ((giaban * sl) * (giamgia / 100));
-                //  Khai báo List View để hiển thị dữ liệu
                 ListViewItem lv = new ListViewItem(mahd);
                 lv.SubItems.Add(manv);
                 lv.SubItems.Add(makh);
-                lv.SubItems.Add(mahang);
                 lv.SubItems.Add(dt.ToString());
-                lv.SubItems.Add(giaban + "");
-                lv.SubItems.Add(sl + "");
-                lv.SubItems.Add(giamgia + "");
-                lv.SubItems.Add(tt + "");
                 lvHoaDon.Items.Add(lv);
             }
             rd.Close();
         }
 
-        private void txtDonGia_TextChanged(object sender, EventArgs e)
+        private void btnIn_Click(object sender, EventArgs e)
         {
-            tinhtongtien();
+            inloaihang ilh =new inloaihang(txtMaHD.Text);
+            ilh.Show();
         }
 
-        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
-            tinhtongtien();
+            string query = "tthoadon";
+            string action = "insert";
+            string loi = "Thêm không thành công";
+            string thanhcong = "Thêm thành công";
+            Action(query, action, loi, thanhcong);
+        }
+
+        private void txtTimkiem_TextChanged_1(object sender, EventArgs e)
+        {
+
+            if (txtTimkiem.Text.Trim().Length == 0)
+            {
+                hienlenlv();
+            }
+            else
+            {
+                hientimkiemhoadon();
+            }
+            
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+            string tiento = "HD";
+            txtMaHD.Text=CreateKey(tiento);
+            btnSua.Enabled = false;
+            btnIn.Enabled = false;
+            btnXemCT.Enabled = false;
+            mskNgayBan.Clear();
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            string query = "tthoadon";
+            string action = "update";
+            string loi = "Sửa không thành công";
+            string thanhcong = "Sửa thành công";
+            Action(query, action, loi, thanhcong);
+        }
+
+        private void btnIn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXemCT_Click(object sender, EventArgs e)
+        {
+            Chitiethoadon cthd = new Chitiethoadon(txtMaHD.Text);
+            cthd.Show();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult rt = MessageBox.Show("Bạn có muốn thoát không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(rt == DialogResult.Yes)
+            {
+                Close();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

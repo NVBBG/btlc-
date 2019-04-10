@@ -60,10 +60,34 @@
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="danhsachloaihang.cs">
+    <Compile Include="Chitiethoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chitiethoadon.Designer.cs">
+      <DependentUpon>Chitiethoadon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crdanhsachkhachhang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>danhsachloaihang.rpt</DependentUpon>
+      <DependentUpon>Crdanhsachkhachhang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crdanhsachloaihang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Crdanhsachloaihang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrCtHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCtHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form1.cs">
@@ -77,6 +101,24 @@
     </Compile>
     <Compile Include="HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inchitiethoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inchitiethoadon.Designer.cs">
+      <DependentUpon>inchitiethoadon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="indsloaihang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="indsloaihang.Designer.cs">
+      <DependentUpon>indsloaihang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inkhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inkhachhang.Designer.cs">
+      <DependentUpon>inkhachhang.cs</DependentUpon>
     </Compile>
     <Compile Include="inloaihang.cs">
       <SubType>Form</SubType>
@@ -116,6 +158,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBHMPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBHMPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,15 +184,39 @@
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="danhsachloaihang.rpt">
+    <EmbeddedResource Include="Chitiethoadon.resx">
+      <DependentUpon>Chitiethoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crdanhsachkhachhang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>danhsachloaihang.cs</LastGenOutput>
+      <LastGenOutput>Crdanhsachkhachhang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crdanhsachloaihang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Crdanhsachloaihang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrCtHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCtHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inchitiethoadon.resx">
+      <DependentUpon>inchitiethoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="indsloaihang.resx">
+      <DependentUpon>indsloaihang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inkhachhang.resx">
+      <DependentUpon>inkhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inloaihang.resx">
       <DependentUpon>inloaihang.cs</DependentUpon>
@@ -198,6 +269,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLBHMPDataSet.xsc">
+      <DependentUpon>QLBHMPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBHMPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBHMPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBHMPDataSet.xss">
+      <DependentUpon>QLBHMPDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\application-exit.png" />
   </ItemGroup>
   <ItemGroup>

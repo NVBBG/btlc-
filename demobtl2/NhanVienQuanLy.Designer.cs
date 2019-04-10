@@ -41,7 +41,7 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLoaiMP = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
@@ -142,8 +142,8 @@
             // tToolStripMenuItem
             // 
             this.tToolStripMenuItem.Name = "tToolStripMenuItem";
-            this.tToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
-            this.tToolStripMenuItem.Text = "T";
+            this.tToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tToolStripMenuItem.Text = "Thống kê năm";
             // 
             // thoátToolStripMenuItem
             // 
@@ -177,21 +177,23 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // button4
+            // btnLoaiMP
             // 
-            this.button4.BackColor = System.Drawing.Color.GreenYellow;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Image = global::demobtl2.Properties.Resources.icons8_bar_chart_22;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 430);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 31);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Loại Mỹ Phẩm";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLoaiMP.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnLoaiMP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLoaiMP.Image = global::demobtl2.Properties.Resources.icons8_bar_chart_22;
+            this.btnLoaiMP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiMP.Location = new System.Drawing.Point(0, 430);
+            this.btnLoaiMP.Name = "btnLoaiMP";
+            this.btnLoaiMP.Size = new System.Drawing.Size(138, 31);
+            this.btnLoaiMP.TabIndex = 9;
+            this.btnLoaiMP.Text = "Loại Mỹ Phẩm";
+            this.btnLoaiMP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLoaiMP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoaiMP.UseVisualStyleBackColor = false;
+            this.btnLoaiMP.Click += new System.EventHandler(this.btnLoaiMP_Click);
             // 
             // btnThongKe
             // 
@@ -206,6 +208,7 @@
             this.btnThongKe.Text = "Mỹ Phẩm";
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnKhachHang
             // 
@@ -220,6 +223,7 @@
             this.btnKhachHang.Text = "Khách Hàng";
             this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachHang.UseVisualStyleBackColor = false;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnHoaDon
             // 
@@ -235,6 +239,7 @@
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHoaDon.UseVisualStyleBackColor = false;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // pictureBox1
             // 
@@ -275,7 +280,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTen);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnLoaiMP);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.btnKhachHang);
             this.Controls.Add(this.btnHoaDon);
@@ -315,7 +320,7 @@
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLoaiMP;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label lbTen;
         private System.Windows.Forms.Label label1;

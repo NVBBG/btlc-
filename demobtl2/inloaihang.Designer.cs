@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.danhsachloaihang1 = new demobtl2.danhsachloaihang();
+            this.CrHoaDon1 = new demobtl2.CrHoaDon();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,7 +40,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.danhsachloaihang1;
+            this.crystalReportViewer1.ReportSource = this.CrHoaDon1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
@@ -52,6 +52,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "inloaihang";
             this.Text = "inloaihang";
+            this.Load += new System.EventHandler(this.inloaihang_Load);
             this.ResumeLayout(false);
 
         }
@@ -59,6 +60,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private danhsachloaihang danhsachloaihang1;
+        private CrHoaDon CrHoaDon1;
+        // private danhsachloaihang danhsachloaihang1;
     }
 }

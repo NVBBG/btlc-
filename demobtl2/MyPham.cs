@@ -116,8 +116,8 @@ namespace demobtl2
             {
                 // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
                 string ma = rd.GetString(0);
-                string maloai = rd.GetString(2);
-                string tenhang = rd.GetString(1);
+                string maloai = rd.GetString(1);
+                string tenhang = rd.GetString(2);
                 int sl = rd.GetInt32(3);
                 Double dongia = rd.GetDouble(4);
 
@@ -141,8 +141,8 @@ namespace demobtl2
             {
                 // cbMaLoai.Enabled = false;
                 ListViewItem lvi = lvMyPham.SelectedItems[0];
-                txtMaSp.Text = lvi.SubItems[1].Text;
-                txtTenMp.Text = lvi.SubItems[2].Text;
+                txtMaSp.Text = lvi.SubItems[2].Text;
+                txtTenMp.Text = lvi.SubItems[1].Text;
                 cbMaLoai.Text = lvi.SubItems[0].Text;
                 txtSoLuong.Text = lvi.SubItems[3].Text;
                 txtDonGia.Text = lvi.SubItems[4].Text;

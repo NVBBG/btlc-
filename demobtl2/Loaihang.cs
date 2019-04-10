@@ -75,7 +75,7 @@ namespace demobtl2
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-            inloaihang lh = new inloaihang();
+            indsloaihang lh = new indsloaihang();
             lh.Show();
         }
 
@@ -92,6 +92,7 @@ namespace demobtl2
                 txtTenLoaiHang.Text = lvi.SubItems[1].Text;
             }
             txtMaLoaiHang.Enabled = false;
+            btnSua.Enabled = true;
             //MessageBox.Show(ma);
             //HienThiLoai(ma);
         }

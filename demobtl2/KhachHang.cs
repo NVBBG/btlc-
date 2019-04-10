@@ -441,5 +441,11 @@ namespace demobtl2
             }
             rd.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            inkhachhang ikh = new inkhachhang();
+            ikh.Show();
+        }
     }
 }

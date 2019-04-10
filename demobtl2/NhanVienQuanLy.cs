@@ -209,5 +209,47 @@ namespace demobtl2
             kh.MdiParent = this;
             kh.Show();
         }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            HoaDon hd = new HoaDon();
+            hd.MdiParent = this;
+            hd.Show();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            KhachHang kh = new KhachHang();
+            kh.MdiParent = this;
+            kh.Show();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            MyPham tk = new MyPham();
+            tk.MdiParent = this;
+            tk.Show();
+        }
+
+        private void btnLoaiMP_Click(object sender, EventArgs e)
+        {
+            Loaihang lmp = new Loaihang();
+            lmp.MdiParent = this;
+            lmp.Show();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult rt = MessageBox.Show("Bạn có muốn thoát không? ","Hỏi thoát",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(rt==DialogResult.Yes)
+            {
+                Close();
+            }
+            else
+            {
+                return;
+            }
+           
+        }
     }
 }

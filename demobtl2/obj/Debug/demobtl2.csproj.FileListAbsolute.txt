@@ -39,3 +39,7 @@ C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\stdole.dll
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csproj.CopyComplete
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.MyPham.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inloaihang.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.indsloaihang.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inkhachhang.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Chitiethoadon.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inchitiethoadon.resources
