@@ -64,6 +64,15 @@ namespace demobtl2
             }
             return check;
         }
+        public Boolean KiemTraTonTai(string Frmname)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name.Equals(Frmname))
+                    return true;
+            }
+            return false;
+        }
         private void NhanVienQuanLy_Load(object sender, EventArgs e)
         {
 
@@ -199,43 +208,75 @@ namespace demobtl2
         private void quảnLýHóaĐơnToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             HoaDon hd = new HoaDon();
-            hd.MdiParent = this;
-            hd.Show();
+            if (KiemTraTonTai("HoaDon") == true)
+                hd.Activate();
+            else
+            {
+                hd.MdiParent = this;
+                hd.Show();
+            }
         }
 
         private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+         
             KhachHang kh = new KhachHang();
-            kh.MdiParent = this;
-            kh.Show();
+            if (KiemTraTonTai("KhachHang") == true)
+                kh.Activate();
+            else
+            {
+                kh.MdiParent = this;
+                kh.Show();
+            }
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             HoaDon hd = new HoaDon();
-            hd.MdiParent = this;
-            hd.Show();
+            if (KiemTraTonTai("HoaDon") == true)
+                hd.Activate();
+            else
+            {
+                hd.MdiParent = this;
+                hd.Show();
+            }
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             KhachHang kh = new KhachHang();
-            kh.MdiParent = this;
-            kh.Show();
+            if (KiemTraTonTai("KhachHang") == true)
+                kh.Activate();
+            else
+            {
+                kh.MdiParent = this;
+                kh.Show();
+            }
+          
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             MyPham tk = new MyPham();
-            tk.MdiParent = this;
-            tk.Show();
+            if (KiemTraTonTai("MyPham") == true)
+                tk.Activate();
+            else
+            {
+                tk.MdiParent = this;
+                tk.Show();
+            }
         }
 
         private void btnLoaiMP_Click(object sender, EventArgs e)
         {
             Loaihang lmp = new Loaihang();
-            lmp.MdiParent = this;
-            lmp.Show();
+            if (KiemTraTonTai("Loaihang") == true)
+                lmp.Activate();
+            else
+            {
+                lmp.MdiParent = this;
+                lmp.Show();
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -251,5 +292,43 @@ namespace demobtl2
             }
            
         }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thongtinnv ttnv = new Thongtinnv();
+            if (KiemTraTonTai("Thongtinnv") == true)
+                ttnv.Activate();
+            else
+            {
+                ttnv.MdiParent = this;
+                ttnv.Show();
+            }
+        }
+
+        private void quảnLýLoạiMỹPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Loaihang lh = new Loaihang();
+            if (KiemTraTonTai("Loaihang") == true)
+                lh.Activate();
+            else
+            {
+                lh.MdiParent = this;
+                lh.Show();
+            }
+        }
+
+        private void quảnLýMỹPhẩmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MyPham mp = new MyPham();
+            if (KiemTraTonTai("MyPham") == true)
+                mp.Activate();
+            else
+            {
+                mp.MdiParent = this;
+                mp.Show();
+            }
+        }
+
+        
     }
 }

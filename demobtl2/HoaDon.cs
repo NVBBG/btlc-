@@ -271,7 +271,23 @@ namespace demobtl2
                 cnn.Open();
             }
         }
-       
+        public int kt1hang()
+        {
+            Connect();
+            string query = "CTHD";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mahd", SqlDbType.NVarChar).Value = txtMaHD.Text;
+            cmd.Parameters.AddWithValue("@action", SqlDbType.NVarChar).Value = "selectone";
+            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
+            int k = 0;
+            if(rd.HasRows)
+            {
+                k = 1;
+            }
+            rd.Close();
+            return k;
+        }
         private void hientimkiemhoadon()
         {
             Connect();
@@ -348,13 +364,31 @@ namespace demobtl2
 
         private void btnIn_Click_1(object sender, EventArgs e)
         {
-
+            inchitiethoadon incthd = new inchitiethoadon(txtMaHD.Text);
+            incthd.Show();
         }
 
         private void btnXemCT_Click(object sender, EventArgs e)
         {
-            Chitiethoadon cthd = new Chitiethoadon(txtMaHD.Text);
-            cthd.Show();
+            if (kt1hang() == 1)
+            {
+                DialogResult rt = MessageBox.Show("Bạn chưa thêm chi tiết hóa đơn, Bạn có muốn thêm ngay không ?","Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rt == DialogResult.Yes)
+                {
+                    Chitiethoadon cthd = new Chitiethoadon(txtMaHD.Text);
+                    cthd.MdiParent = this;
+                    cthd.Show();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                Chitiethoadon cthd = new Chitiethoadon(txtMaHD.Text);                
+                cthd.Show();
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

@@ -533,6 +533,26 @@ namespace demobtl2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-exit-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_face_powder_22 {
             get {
                 object obj = ResourceManager.GetObject("icons8-face-powder-22", resourceCulture);

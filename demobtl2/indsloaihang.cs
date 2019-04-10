@@ -16,5 +16,10 @@ namespace demobtl2
         {
             InitializeComponent();
         }
+
+        private void indsloaihang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

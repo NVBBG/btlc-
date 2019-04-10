@@ -41,6 +41,7 @@
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(587, 379);
             this.crystalReportViewer1.TabIndex = 0;
+           // this.crystalReportViewer1.ReportRefresh += new CrystalDecisions.Windows.Forms.RefreshEventHandler(this.crystalReportViewer1_ReportRefresh);
             // 
             // inchitiethoadon
             // 

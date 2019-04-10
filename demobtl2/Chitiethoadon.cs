@@ -93,7 +93,7 @@ namespace demobtl2
         {
             txtMaHD.Enabled = false;
             btnSua.Enabled = false;
-            btnIn.Enabled = false;
+            btnIn.Enabled = true;
             txtMaHD.Text = mahd;
             hienmotmahang();
             hienmahang();
@@ -220,7 +220,7 @@ namespace demobtl2
         private void btnHuy_Click(object sender, EventArgs e)
         {
             btnSua.Enabled = false;
-            btnIn.Enabled = false;
+            btnIn.Enabled = true;
             cbMaHang.Text = "";
             txtSoLuong.Clear();
             txtGiamgia.Clear();
@@ -321,6 +321,7 @@ namespace demobtl2
         private void btnIn_Click(object sender, EventArgs e)
         {
             inchitiethoadon ict = new inchitiethoadon(txtMaHD.Text);
+            ict.MdiParent = this;
             ict.Show();
         }
     }

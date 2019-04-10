@@ -45,14 +45,7 @@ namespace demobtl2
         }
         private string laythongtin()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string query = "NhanVien";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -74,12 +67,13 @@ namespace demobtl2
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            ktluutk();
             if (string.IsNullOrWhiteSpace(txtTaiKhoan.Text))
             {
                 btnDangNhap.Enabled = false;
             }
             //string hello = "coa to ndm";
-           // MyPham my = new MyPham(hello);
+            // MyPham my = new MyPham(hello);
         }
 
         private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
@@ -146,18 +140,19 @@ namespace demobtl2
         }
         private void luudangnhap()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string query = "sp_session";
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@manv", SqlDbType.NVarChar).Value = laythongtin();
+            if(ckLuumk.Checked)
+            {
+            cmd.Parameters.AddWithValue("@trangthai", SqlDbType.NVarChar).Value = 1;
+            }
+            else
+            {
+            cmd.Parameters.AddWithValue("@trangthai", SqlDbType.NVarChar).Value = 0;
+            }
             int i2 = cmd.ExecuteNonQuery();
             if (i2 > 0)
             {
@@ -175,7 +170,61 @@ namespace demobtl2
         {
             kiemtradangnhap();  
         }
-        private void kiemtradangnhap()
+        private void ktluutk()
+        {
+            try
+            {
+                Connect();
+                string query = "get_session";
+                SqlCommand cmd = new SqlCommand(query, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader rd = cmd.ExecuteReader();
+                //cnn.Close();
+                while (rd.Read())
+                {
+                    int num = rd.GetInt32(1);
+                    // MessageBox.Show(num.ToString());
+                    if ((int.Parse(num.ToString())) == 1)
+                    {
+                        rd.Close();
+                        hientthisession();
+                    }
+                    else
+                    {
+                        txtMatKhau.Text = "";
+                        txtTaiKhoan.Text = "";
+
+                    }
+                }
+                rd.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+        private void hientthisession()
+        {
+           if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string query = "sp_nvdn";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                txtTaiKhoan.Text = rd.GetString(5);
+                txtMatKhau.Text = rd.GetString(6);
+            }
+            rd.Close();
+        }
+        private void Connect()
         {
             if (cnn == null)
             {
@@ -185,6 +234,10 @@ namespace demobtl2
             {
                 cnn.Open();
             }
+        }
+        private void kiemtradangnhap()
+        {
+            Connect();
             string query = "NhanVien";
             string tk = txtTaiKhoan.Text;
             string mk = txtMatKhau.Text;
@@ -205,6 +258,51 @@ namespace demobtl2
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
                 txtTaiKhoan.Focus();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.PasswordChar = char.Parse("\0");
+        }
+
+        private void checkBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                txtMatKhau.PasswordChar = char.Parse("\0");
+            else
+                txtMatKhau.PasswordChar = char.Parse("*");
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                txtMatKhau.PasswordChar = char.Parse("\0");
+            else
+                txtMatKhau.PasswordChar = char.Parse("*");
+        }
+
+        private void ckLuumk_CheckedChanged(object sender, EventArgs e)
+        {
+            int ma;
+            if (ckLuumk.Checked)
+            {
+                ma = 1;
+                CapNhat(ma);
+            }
+            else
+            {
+                ma = 0;
+                CapNhat(ma);
+            }
+        }
+        private void CapNhat(int ma)
+        {
+            Connect();
+            string query = "changedn";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ma", SqlDbType.Int).Value = ma;
+            
         }
     }
 }
