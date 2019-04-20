@@ -1,7 +1,6 @@
 C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\demobtl2.exe.config
 C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\demobtl2.exe
 C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\demobtl2.pdb
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Form1.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Properties.Resources.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csproj.GenerateResource.cache
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csproj.CoreCompileInputs.cache
@@ -13,10 +12,8 @@ C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.HoaDon.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.KhachHang.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Loaihang.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csprojAssemblyReference.cache
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.MenuNV.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.admin.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Thongtinnv.resources
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.thongketheothang.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\CrystalDecisions.Shared.dll
@@ -39,7 +36,9 @@ C:\Users\HP\source\repos\demobtl2\demobtl2\bin\Debug\stdole.dll
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.csproj.CopyComplete
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.MyPham.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inloaihang.resources
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.indsloaihang.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inkhachhang.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Chitiethoadon.resources
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inchitiethoadon.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Thongke.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.DangNhap.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.InHoaDon.resources
+C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.InCTHoaDon.resources

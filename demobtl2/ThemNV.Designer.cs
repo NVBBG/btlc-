@@ -49,12 +49,12 @@
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbloi = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnMoKhoa = new System.Windows.Forms.Button();
             this.txtXacNhanMK = new System.Windows.Forms.TextBox();
             this.btnKhoa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -71,9 +71,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.rdallnv = new System.Windows.Forms.RadioButton();
+            this.rdlock = new System.Windows.Forms.RadioButton();
+            this.rdnv = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -143,7 +148,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(32, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(257, 191);
+            this.groupBox1.Size = new System.Drawing.Size(236, 191);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm Thông Tin Nhân Viên";
@@ -232,7 +237,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 26);
+            this.label6.Location = new System.Drawing.Point(41, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 13;
@@ -241,7 +246,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 48);
+            this.label7.Location = new System.Drawing.Point(40, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 14;
@@ -249,7 +254,7 @@
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(126, 23);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(153, 23);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(236, 20);
             this.txtTaiKhoan.TabIndex = 8;
@@ -257,7 +262,7 @@
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(126, 45);
+            this.txtMatKhau.Location = new System.Drawing.Point(153, 45);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(236, 20);
             this.txtMatKhau.TabIndex = 9;
@@ -265,6 +270,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbloi);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.btnMoKhoa);
             this.groupBox2.Controls.Add(this.txtXacNhanMK);
@@ -274,17 +280,25 @@
             this.groupBox2.Controls.Add(this.txtMatKhau);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(307, 39);
+            this.groupBox2.Location = new System.Drawing.Point(286, 39);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(398, 128);
+            this.groupBox2.Size = new System.Drawing.Size(419, 128);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cấp tài khoản";
             // 
+            // lbloi
+            // 
+            this.lbloi.AutoSize = true;
+            this.lbloi.Location = new System.Drawing.Point(6, 103);
+            this.lbloi.Name = "lbloi";
+            this.lbloi.Size = new System.Drawing.Size(0, 13);
+            this.lbloi.TabIndex = 19;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 71);
+            this.label9.Location = new System.Drawing.Point(39, 71);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 13);
             this.label9.TabIndex = 18;
@@ -295,7 +309,7 @@
             // 
             this.btnMoKhoa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoKhoa.Image = global::demobtl2.Properties.Resources.document_decrypt;
-            this.btnMoKhoa.Location = new System.Drawing.Point(269, 94);
+            this.btnMoKhoa.Location = new System.Drawing.Point(296, 94);
             this.btnMoKhoa.Name = "btnMoKhoa";
             this.btnMoKhoa.Size = new System.Drawing.Size(93, 28);
             this.btnMoKhoa.TabIndex = 12;
@@ -306,7 +320,7 @@
             // 
             // txtXacNhanMK
             // 
-            this.txtXacNhanMK.Location = new System.Drawing.Point(126, 67);
+            this.txtXacNhanMK.Location = new System.Drawing.Point(153, 67);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(236, 20);
             this.txtXacNhanMK.TabIndex = 10;
@@ -315,7 +329,7 @@
             // 
             this.btnKhoa.Font = new System.Drawing.Font("Sitka Banner", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoa.Image = global::demobtl2.Properties.Resources.document_encrypt1;
-            this.btnKhoa.Location = new System.Drawing.Point(186, 94);
+            this.btnKhoa.Location = new System.Drawing.Point(212, 94);
             this.btnKhoa.Name = "btnKhoa";
             this.btnKhoa.Size = new System.Drawing.Size(77, 28);
             this.btnKhoa.TabIndex = 11;
@@ -326,33 +340,21 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnThoat);
             this.groupBox3.Controls.Add(this.btnHuy);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(307, 170);
+            this.groupBox3.Location = new System.Drawing.Point(286, 170);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 59);
+            this.groupBox3.Size = new System.Drawing.Size(206, 59);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tác vụ";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = global::demobtl2.Properties.Resources.application_exit5;
-            this.btnThoat.Location = new System.Drawing.Point(313, 17);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(74, 32);
-            this.btnThoat.TabIndex = 17;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            // 
             // btnHuy
             // 
             this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(166, 17);
+            this.btnHuy.Location = new System.Drawing.Point(138, 17);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(57, 32);
             this.btnHuy.TabIndex = 16;
@@ -364,7 +366,7 @@
             // btnSua
             // 
             this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(95, 17);
+            this.btnSua.Location = new System.Drawing.Point(70, 17);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(65, 32);
             this.btnSua.TabIndex = 14;
@@ -376,9 +378,9 @@
             // btnThem
             // 
             this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(14, 17);
+            this.btnThem.Location = new System.Drawing.Point(6, 17);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 32);
+            this.btnThem.Size = new System.Drawing.Size(64, 32);
             this.btnThem.TabIndex = 13;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -479,12 +481,61 @@
             this.txtTimKiem.TabIndex = 23;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
+            // rdallnv
+            // 
+            this.rdallnv.AutoSize = true;
+            this.rdallnv.Location = new System.Drawing.Point(4, 24);
+            this.rdallnv.Name = "rdallnv";
+            this.rdallnv.Size = new System.Drawing.Size(56, 17);
+            this.rdallnv.TabIndex = 17;
+            this.rdallnv.TabStop = true;
+            this.rdallnv.Text = "Tất cả";
+            this.rdallnv.UseVisualStyleBackColor = true;
+            this.rdallnv.CheckedChanged += new System.EventHandler(this.rdallnv_CheckedChanged);
+            // 
+            // rdlock
+            // 
+            this.rdlock.AutoSize = true;
+            this.rdlock.Location = new System.Drawing.Point(139, 25);
+            this.rdlock.Name = "rdlock";
+            this.rdlock.Size = new System.Drawing.Size(66, 17);
+            this.rdlock.TabIndex = 18;
+            this.rdlock.TabStop = true;
+            this.rdlock.Text = "Đã khoá";
+            this.rdlock.UseVisualStyleBackColor = true;
+            this.rdlock.CheckedChanged += new System.EventHandler(this.rdlock_CheckedChanged);
+            // 
+            // rdnv
+            // 
+            this.rdnv.AutoSize = true;
+            this.rdnv.Location = new System.Drawing.Point(62, 25);
+            this.rdnv.Name = "rdnv";
+            this.rdnv.Size = new System.Drawing.Size(74, 17);
+            this.rdnv.TabIndex = 18;
+            this.rdnv.TabStop = true;
+            this.rdnv.Text = "Nhân viên";
+            this.rdnv.UseVisualStyleBackColor = true;
+            this.rdnv.CheckedChanged += new System.EventHandler(this.rdnv_CheckedChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rdnv);
+            this.groupBox4.Controls.Add(this.rdlock);
+            this.groupBox4.Controls.Add(this.rdallnv);
+            this.groupBox4.Location = new System.Drawing.Point(498, 170);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(207, 59);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Hiển thị nhân viên";
+            // 
             // ThemNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(717, 470);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
@@ -503,6 +554,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,7 +582,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtXacNhanMK;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
@@ -551,5 +603,10 @@
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label lbloi;
+        private System.Windows.Forms.RadioButton rdnv;
+        private System.Windows.Forms.RadioButton rdlock;
+        private System.Windows.Forms.RadioButton rdallnv;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

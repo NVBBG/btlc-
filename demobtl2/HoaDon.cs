@@ -250,7 +250,7 @@ namespace demobtl2
             {
                 txtMaHD.Enabled = false;
                 btnSua.Enabled = true;
-                btnIn.Enabled = true;
+                //btnIn.Enabled = true;
                 btnXemCT.Enabled = true;
                 ListViewItem lvi1 = lvHoaDon.SelectedItems[0];
                 txtMaHD.Text = lvi1.SubItems[0].Text;
@@ -316,7 +316,7 @@ namespace demobtl2
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            inloaihang ilh =new inloaihang(txtMaHD.Text);
+            InCTHoaDon ilh =new InCTHoaDon(txtMaHD.Text);
             ilh.Show();
         }
 
@@ -348,7 +348,7 @@ namespace demobtl2
             string tiento = "HD";
             txtMaHD.Text=CreateKey(tiento);
             btnSua.Enabled = false;
-            btnIn.Enabled = false;
+            //btnIn.Enabled = false;
             btnXemCT.Enabled = false;
             mskNgayBan.Clear();
         }
@@ -364,19 +364,19 @@ namespace demobtl2
 
         private void btnIn_Click_1(object sender, EventArgs e)
         {
-            inchitiethoadon incthd = new inchitiethoadon(txtMaHD.Text);
+            InHoaDon incthd = new InHoaDon(txtMaHD.Text);
             incthd.Show();
         }
 
         private void btnXemCT_Click(object sender, EventArgs e)
         {
-            if (kt1hang() == 1)
+            if (kt1hang() == 0)
             {
                 DialogResult rt = MessageBox.Show("Bạn chưa thêm chi tiết hóa đơn, Bạn có muốn thêm ngay không ?","Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rt == DialogResult.Yes)
                 {
-                    Chitiethoadon cthd = new Chitiethoadon(txtMaHD.Text);
-                    cthd.MdiParent = this;
+                    ChiTietHoaDon cthd = new ChiTietHoaDon(txtMaHD.Text);
+                    //cthd.MdiParent = this;
                     cthd.Show();
                 }
                 else
@@ -386,7 +386,7 @@ namespace demobtl2
             }
             else
             {
-                Chitiethoadon cthd = new Chitiethoadon(txtMaHD.Text);                
+                ChiTietHoaDon cthd = new ChiTietHoaDon(txtMaHD.Text);                
                 cthd.Show();
             }
         }

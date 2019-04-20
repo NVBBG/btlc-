@@ -75,7 +75,7 @@ namespace demobtl2
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-            indsloaihang lh = new indsloaihang();
+            InLoaiHang lh = new InLoaiHang();
             lh.Show();
         }
 

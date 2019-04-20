@@ -42,7 +42,6 @@
             this.btnDong = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -140,9 +139,9 @@
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(224, 114);
+            this.btnHuy.Location = new System.Drawing.Point(278, 115);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(56, 38);
+            this.btnHuy.Size = new System.Drawing.Size(75, 38);
             this.btnHuy.TabIndex = 11;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -153,7 +152,7 @@
             // 
             this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDong.Image = global::demobtl2.Properties.Resources.document_print;
-            this.btnDong.Location = new System.Drawing.Point(286, 115);
+            this.btnDong.Location = new System.Drawing.Point(361, 115);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(57, 38);
             this.btnDong.TabIndex = 10;
@@ -167,7 +166,7 @@
             this.btnSua.Enabled = false;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(162, 114);
+            this.btnSua.Location = new System.Drawing.Point(216, 115);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(56, 38);
             this.btnSua.TabIndex = 7;
@@ -180,7 +179,7 @@
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(88, 114);
+            this.btnThem.Location = new System.Drawing.Point(142, 114);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(68, 38);
             this.btnThem.TabIndex = 6;
@@ -189,26 +188,12 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::demobtl2.Properties.Resources.dialog_error2;
-            this.button1.Location = new System.Drawing.Point(349, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 38);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Đóng";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Loaihang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(462, 404);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTimkiem);
             this.Controls.Add(this.btnHuy);
@@ -245,6 +230,5 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.TextBox txtTimkiem;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -73,6 +73,110 @@ namespace demobtl2
             }
             rd.Close();
         }
+        private void hiennv()
+        {
+            // checkcnn();
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string gt;
+            string query = "NhanVien";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@action", SqlDbType.VarChar).Value = "selectnv";
+            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
+            lvNhanVien.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
+            while (rd.Read())
+            {
+                // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
+                string ma = rd.GetString(0);
+                string ten = rd.GetString(1);
+                // MessageBox.Show(rd.GetBoolean(2).ToString());
+                Boolean gioitinh = rd.GetBoolean(2);
+                string diachi = rd.GetString(3);
+                DateTime ns = rd.GetDateTime(4);
+                string tk = rd.GetString(5);
+                string mk = rd.GetString(6);
+                string tinhtrang = rd.GetString(7);
+                string sdt = rd.GetString(8);
+                //  Khai báo List View để hiển thị dữ liệu
+                ListViewItem lv = new ListViewItem(ma);
+                lv.SubItems.Add(ten);
+                if (gioitinh)
+                {
+                    lv.SubItems.Add("Nam");
+                }
+                else
+                {
+                    lv.SubItems.Add("Nữ");
+                }
+                lv.SubItems.Add(diachi);
+                lv.SubItems.Add(ns.ToString());
+                lv.SubItems.Add(tk);
+                lv.SubItems.Add(mk);
+                lv.SubItems.Add(tinhtrang);
+                lv.SubItems.Add(sdt);
+                lvNhanVien.Items.Add(lv);
+            }
+            rd.Close();
+        }
+        private void hienlock()
+        {
+            // checkcnn();
+            if (cnn == null)
+            {
+                cnn = new SqlConnection(constr);
+            }
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+            string gt;
+            string query = "NhanVien";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@action", SqlDbType.VarChar).Value = "selectkhoa";
+            SqlDataReader rd = cmd.ExecuteReader(); // Khai báo DataReader
+            lvNhanVien.Items.Clear(); // Xóa hết dữ liệu trên list view để chèn dữ liệu mới
+            while (rd.Read())
+            {
+                // Khai báo các biến để lưu dữ liệu lấy từ SQL Sever về
+                string ma = rd.GetString(0);
+                string ten = rd.GetString(1);
+                // MessageBox.Show(rd.GetBoolean(2).ToString());
+                Boolean gioitinh = rd.GetBoolean(2);
+                string diachi = rd.GetString(3);
+                DateTime ns = rd.GetDateTime(4);
+                string tk = rd.GetString(5);
+                string mk = rd.GetString(6);
+                string tinhtrang = rd.GetString(7);
+                string sdt = rd.GetString(8);
+                //  Khai báo List View để hiển thị dữ liệu
+                ListViewItem lv = new ListViewItem(ma);
+                lv.SubItems.Add(ten);
+                if (gioitinh)
+                {
+                    lv.SubItems.Add("Nam");
+                }
+                else
+                {
+                    lv.SubItems.Add("Nữ");
+                }
+                lv.SubItems.Add(diachi);
+                lv.SubItems.Add(ns.ToString());
+                lv.SubItems.Add(tk);
+                lv.SubItems.Add(mk);
+                lv.SubItems.Add(tinhtrang);
+                lv.SubItems.Add(sdt);
+                lvNhanVien.Items.Add(lv);
+            }
+            rd.Close();
+        }
         public static string ConvertTimeTo24(string hour)
         {
             string h = "";
@@ -222,7 +326,15 @@ namespace demobtl2
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
+            if(txtMatKhau.Text.Trim().Length < 6)
+            {
+                lbloi.Text = "Mật khẩu phải lớn hơn 6 kí tự";
+                
+            }
+            else
+            {
+                lbloi.Text = null;
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -549,6 +661,32 @@ namespace demobtl2
                 lvNhanVien.Items.Add(lv);
             }
             rd.Close();
+        }
+
+        private void rdallnv_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdallnv.Checked)
+            {
+                hien();
+            }
+           
+           
+        }
+
+        private void rdlock_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdlock.Checked)
+            {
+                hienlock();
+            }
+        }
+
+        private void rdnv_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdnv.Checked)
+            {
+                hiennv();
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace demobtl2
 {
@@ -40,27 +41,31 @@ namespace demobtl2
             btnHuy.PerformClick();
             hien();
             if (txtMaKH.Text == "")
-            {  
+            {
                 btnSua.Enabled = false;
                 //btnLuu.Enabled = false;
                 //btnXoa.Enabled = false;
             }
-           
-            
+
+
         }
-        private void hien()
+        public void Connect()
         {
-            if(cnn == null)
+            if (cnn == null)
             {
                 cnn = new SqlConnection(constr);
             }
-            if(cnn.State ==  ConnectionState.Closed)
+            if (cnn.State == ConnectionState.Closed)
             {
                 cnn.Open();
             }
-           string gt;
+        }
+        private void hien()
+        {
+
+            Connect();
             string query = "Khachhang";
-           // MessageBox.Show(query);
+            // MessageBox.Show(query);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = query;
@@ -76,12 +81,12 @@ namespace demobtl2
                 string ten = rd.GetString(1);
                 string diachi = rd.GetString(2);
                 string sdt = rd.GetString(3);
-                
+
                 //  Khai báo List View để hiển thị dữ liệu
                 ListViewItem lv = new ListViewItem(ma);
                 lv.SubItems.Add(ten);
                 lv.SubItems.Add(diachi);
-                if(gioitinh)
+                if (gioitinh)
                 {
                     lv.SubItems.Add("Nam");
                 }
@@ -89,7 +94,7 @@ namespace demobtl2
                 {
                     lv.SubItems.Add("Nữ");
                 }
-                
+
                 lv.SubItems.Add(sdt);
                 lvKH.Items.Add(lv);
             }
@@ -97,19 +102,12 @@ namespace demobtl2
         }
         private bool kiemtratontai()
         {
+            Connect();
             bool kt = false;
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
             string maso = txtMaKH.Text;
             SqlConnection con = new SqlConnection(constr);
             SqlCommand cmd = new SqlCommand("Select * from tblKhachhang", cnn);
-           
+
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
@@ -143,7 +141,7 @@ namespace demobtl2
                 txtDiaChi.Text = lvi.SubItems[2].Text;
                 txtDienThoai.Text = lvi.SubItems[4].Text;
                 //MessageBox.Show(lvi.SubItems[3].Text);
-                if ((lvi.SubItems[3].Text)=="Nam")
+                if ((lvi.SubItems[3].Text) == "Nam")
                 {
                     rdNam.Checked = true;
                 }
@@ -154,9 +152,9 @@ namespace demobtl2
             }
             txtMaKH.Enabled = false;
             btnSua.Enabled = true;
-           // btnXoa.Enabled = true;
-           // btnLuu.Enabled = true;
-           // HienThiKH(ma);
+            // btnXoa.Enabled = true;
+            // btnLuu.Enabled = true;
+            // HienThiKH(ma);
         }
         public static string ConvertTimeTo24(string hour)
         {
@@ -244,68 +242,47 @@ namespace demobtl2
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (kiemtratontai())
+            Connect();
+            string ma = txtMaKH.Text;
+            string ten = txtTenKH.Text;
+            string diachi = txtDiaChi.Text;
+            string sdt = txtDienThoai.Text;
+            Boolean gioitinh;
+            if (rdNam.Checked == true)
             {
-                MessageBox.Show("Trùng Khóa Chính");
+                gioitinh = true;
             }
             else
-            { 
-                if (cnn == null)
-                {
-                    cnn = new SqlConnection(constr);
-                }
-                if (cnn.State == ConnectionState.Closed)
-                {
-                    cnn.Open();
-                }
-                string ma = txtMaKH.Text;
-                string ten = txtTenKH.Text;
-                string diachi = txtDiaChi.Text;
-                string sdt = txtDienThoai.Text;
-                Boolean gioitinh;
-                if (rdNam.Checked == true)
-                {
-                    gioitinh = true;
-                }
-                else
-                {
-                    gioitinh = false;
-                }
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "Khachhang";
-                cmd.Connection = cnn;
-                cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = ma;
-                cmd.Parameters.Add("@ten", SqlDbType.NVarChar).Value = ten;
-                cmd.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = diachi;
-                cmd.Parameters.Add("@sdt", SqlDbType.NVarChar).Value = sdt;
-                cmd.Parameters.Add("@gt", SqlDbType.Bit).Value = gioitinh;
-                cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "insert";
-                int ret = cmd.ExecuteNonQuery();
-                if (ret > 0)
-                {
-                    hien();
-                    MessageBox.Show("Thêm thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Thêm Thất Bại!");
-                }
-                btnHuy.PerformClick();
+            {
+                gioitinh = false;
             }
-            
+            MessageBox.Show(gioitinh.ToString());
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "Khachhang";
+            cmd.Connection = cnn;
+            cmd.Parameters.Add("@ma", SqlDbType.NVarChar).Value = ma;
+            cmd.Parameters.Add("@ten", SqlDbType.NVarChar).Value = ten;
+            cmd.Parameters.Add("@diachi", SqlDbType.NVarChar).Value = diachi;
+            cmd.Parameters.Add("@sdt", SqlDbType.NVarChar).Value = sdt;
+            cmd.Parameters.Add("@gt", SqlDbType.Bit).Value = gioitinh;
+            cmd.Parameters.Add("@action", SqlDbType.NVarChar).Value = "insert";
+            int ret = cmd.ExecuteNonQuery();
+            if (ret > 0)
+            {
+                hien();
+                MessageBox.Show("Thêm thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Thêm Thất Bại!");
+            }
+            btnHuy.PerformClick();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string ma = txtMaKH.Text;
             string ten = txtTenKH.Text;
             string diachi = txtDiaChi.Text;
@@ -384,27 +361,20 @@ namespace demobtl2
 
         private void txtTimkiem_TextChanged(object sender, EventArgs e)
         {
-            if(txtTimkiem.Text.Trim().Length == 0)
+            if (txtTimkiem.Text.Trim().Length == 0)
             {
                 hien();
             }
             else
             {
-            timkiemkhachhang();
+                timkiemkhachhang();
 
             }
         }
 
         private void timkiemkhachhang()
         {
-            if (cnn == null)
-            {
-                cnn = new SqlConnection(constr);
-            }
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
+            Connect();
             string ma = txtTimkiem.Text;
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
@@ -444,8 +414,67 @@ namespace demobtl2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            inkhachhang ikh = new inkhachhang();
+            InKhachHang ikh = new InKhachHang();
             ikh.Show();
+        }
+
+
+
+        private void txtTenKH_TextChanged(object sender, EventArgs e)
+        {
+            Regex regTenKH = new Regex("[^0-9]");
+            Match mKt = regTenKH.Match(txtTenKH.Text);
+            if (!mKt.Success)
+            {
+                errorProvider1.SetError(txtTenKH, "Tên khách hàng không đươc chứa số!!");
+                btnThem.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtTenKH, string.Empty);
+                btnThem.Enabled = true;
+            }
+            //          3   regex$	Biểu thức chính quy phải khớp ở cuối dòng.
+
+            //      4[abc]   Thiết lập định nghĩa, có thể khớp với a hoặc b hoặc c.
+
+            //      5[abc][vz]   Thiết lập định nghĩa, có thể khớp với a hoặc b hoặc c theo sau là v hoặc z.
+
+            //      6[^ abc]  Khi dấu ^ xuất hiện như là nhân vật đầu tiên trong dấu ngoặc vuông, nó phủ nhận mô hình.Điều này có thể khớp với bất kỳ ký tự nào ngoại trừ a hoặc b hoặc c.
+
+            //      7[a - d1 - 7]    Phạm vi: phù hợp với một chuỗi giữa a và điểm d và con số từ 1 đến 7.
+
+            //      8   X | Z Tìm X hoặc Z.
+
+            //      9   XZ Tìm X và theo sau là Z.
+
+            //      10  $	Kiểm tra kết thúc dòng.
+
+
+            //      11  \d Số bất kỳ, viết ngắn gọn cho[0 - 9]
+
+            //      12  \D Ký tự không phải là số, viết ngắn gon cho[^ 0 - 9]
+
+            //      13  \s Ký tự khoảng trắng, viết ngắn gọn cho[ \t\n\x0b\r\f]
+
+            //      14  \S Ký tự không phải khoản trắng, viết ngắn gọn cho[^\s]
+
+            //      15  \w Ký tự chữ, viết ngắn gọn cho[a - zA - Z_0 - 9]
+
+            //      16  \W Ký tự không phải chữ, viết ngắn gọn cho[^\w]
+
+            //      17  \S + Một số ký tự không phải khoảng trắng(Một hoặc nhiều)
+
+            //      18  \b Ký tự thuộc a - z hoặc A-Z hoặc 0 - 9 hoặc _, viết ngắn gọn cho[a - zA - Z0 - 9_].
+
+
+            //      19 * Xuất hiện 0 hoặc nhiều lần, viết ngắn gọn cho { 0,}
+            //          20 + Xuất hiện 1 hoặc nhiều lần, viết ngắn gọn cho { 1,}
+            //          21 ? Xuất hiện 0 hoặc 1 lần, ? viết ngắn gọn cho { 0,1}.
+            //22  { X}
+            //          Xuất hiện X lần, { }
+            //          23  { X,Y}
+            //          Xuất hiện trong khoảng X tới Y lần.
         }
     }
 }

@@ -133,15 +133,15 @@ namespace demobtl2
 
         private void quảnLýMặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            thongketheothang nv = new thongketheothang();
-            if (CheckExistForm("thongketheothang"))
+            Thongke nv = new Thongke();
+            if (CheckExistForm("Thongke") == true)
             {
-                nv.MdiParent = this;
-                nv.Show();
+                nv.Activate();
             }
             else
             {
-                return;
+                nv.MdiParent = this;
+                nv.Show();
             }
         }
 
@@ -329,6 +329,10 @@ namespace demobtl2
             }
         }
 
-        
+        private void thốngKêTheoThángToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+           
+        }
     }
 }

@@ -60,11 +60,11 @@
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chitiethoadon.cs">
+    <Compile Include="ChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chitiethoadon.Designer.cs">
-      <DependentUpon>Chitiethoadon.cs</DependentUpon>
+    <Compile Include="ChiTietHoaDon.Designer.cs">
+      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Crdanhsachkhachhang.cs">
       <AutoGen>True</AutoGen>
@@ -84,11 +84,11 @@
       <DependentUpon>CrHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs">
       <SubType>Form</SubType>
@@ -96,29 +96,35 @@
     <Compile Include="HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="inchitiethoadon.cs">
+    <Compile Include="CrHD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inchitiethoadon.Designer.cs">
-      <DependentUpon>inchitiethoadon.cs</DependentUpon>
+    <Compile Include="InHoaDon.Designer.cs">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="indsloaihang.cs">
+    <Compile Include="InLoaiHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="indsloaihang.Designer.cs">
-      <DependentUpon>indsloaihang.cs</DependentUpon>
+    <Compile Include="InLoaiHang.Designer.cs">
+      <DependentUpon>InLoaiHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="inkhachhang.cs">
+    <Compile Include="InKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inkhachhang.Designer.cs">
-      <DependentUpon>inkhachhang.cs</DependentUpon>
+    <Compile Include="InKhachHang.Designer.cs">
+      <DependentUpon>InKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="inloaihang.cs">
+    <Compile Include="InCTHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inloaihang.Designer.cs">
-      <DependentUpon>inloaihang.cs</DependentUpon>
+    <Compile Include="InCTHoaDon.Designer.cs">
+      <DependentUpon>InCTHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs">
       <SubType>Form</SubType>
@@ -131,12 +137,6 @@
     </Compile>
     <Compile Include="Loaihang.Designer.cs">
       <DependentUpon>Loaihang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuNV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuNV.Designer.cs">
-      <DependentUpon>MenuNV.cs</DependentUpon>
     </Compile>
     <Compile Include="MyPham.cs">
       <SubType>Form</SubType>
@@ -163,11 +163,11 @@
     <Compile Include="ThemNV.Designer.cs">
       <DependentUpon>ThemNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="thongketheothang.cs">
+    <Compile Include="Thongke.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="thongketheothang.Designer.cs">
-      <DependentUpon>thongketheothang.cs</DependentUpon>
+    <Compile Include="Thongke.Designer.cs">
+      <DependentUpon>Thongke.cs</DependentUpon>
     </Compile>
     <Compile Include="Thongtinnv.cs">
       <SubType>Form</SubType>
@@ -178,8 +178,8 @@
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chitiethoadon.resx">
-      <DependentUpon>Chitiethoadon.cs</DependentUpon>
+    <EmbeddedResource Include="ChiTietHoaDon.resx">
+      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Crdanhsachkhachhang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -193,32 +193,33 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inchitiethoadon.resx">
-      <DependentUpon>inchitiethoadon.cs</DependentUpon>
+    <EmbeddedResource Include="CrHD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrHD.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="indsloaihang.resx">
-      <DependentUpon>indsloaihang.cs</DependentUpon>
+    <EmbeddedResource Include="InHoaDon.resx">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inkhachhang.resx">
-      <DependentUpon>inkhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="InLoaiHang.resx">
+      <DependentUpon>InLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inloaihang.resx">
-      <DependentUpon>inloaihang.cs</DependentUpon>
+    <EmbeddedResource Include="InKhachHang.resx">
+      <DependentUpon>InKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCTHoaDon.resx">
+      <DependentUpon>InCTHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loaihang.resx">
       <DependentUpon>Loaihang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuNV.resx">
-      <DependentUpon>MenuNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyPham.resx">
       <DependentUpon>MyPham.cs</DependentUpon>
@@ -239,8 +240,8 @@
     <EmbeddedResource Include="ThemNV.resx">
       <DependentUpon>ThemNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="thongketheothang.resx">
-      <DependentUpon>thongketheothang.cs</DependentUpon>
+    <EmbeddedResource Include="Thongke.resx">
+      <DependentUpon>Thongke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Thongtinnv.resx">
       <DependentUpon>Thongtinnv.cs</DependentUpon>

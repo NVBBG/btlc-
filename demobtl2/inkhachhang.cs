@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace demobtl2
 {
-    public partial class inkhachhang : Form
+    public partial class InKhachHang : Form
     {
-        public inkhachhang()
+        public InKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void inkhachhang_Load(object sender, EventArgs e)
+        {
+            crystalReportViewer1.Refresh();
         }
     }
 }

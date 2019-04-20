@@ -12,15 +12,15 @@ using System.Configuration;
 
 namespace demobtl2
 {
-    public partial class Chitiethoadon : Form
+    public partial class ChiTietHoaDon : Form
     {
         
-        public Chitiethoadon()
+        public ChiTietHoaDon()
         {
             InitializeComponent();
         }
         public string mahd;
-        public Chitiethoadon(string text)
+        public ChiTietHoaDon(string text)
         {
             InitializeComponent();
             //MessageBox.Show(text);
@@ -320,8 +320,8 @@ namespace demobtl2
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            inchitiethoadon ict = new inchitiethoadon(txtMaHD.Text);
-            ict.MdiParent = this;
+            InHoaDon ict = new InHoaDon(txtMaHD.Text);
+            //ict.MdiParent = this;
             ict.Show();
         }
     }

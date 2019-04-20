@@ -44,8 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnIn = new System.Windows.Forms.Button();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.mskNgayBan = new System.Windows.Forms.MaskedTextBox();
@@ -178,8 +176,6 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTimkiem);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.btnThoat);
-            this.groupBox1.Controls.Add(this.btnIn);
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.mskNgayBan);
@@ -227,7 +223,7 @@
             // btnThem
             // 
             this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(125, 111);
+            this.btnThem.Location = new System.Drawing.Point(171, 110);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 34);
             this.btnThem.TabIndex = 26;
@@ -235,30 +231,6 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = global::demobtl2.Properties.Resources.dialog_error2;
-            this.btnThoat.Location = new System.Drawing.Point(438, 111);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(69, 34);
-            this.btnThoat.TabIndex = 25;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Image = global::demobtl2.Properties.Resources.document_print;
-            this.btnIn.Location = new System.Drawing.Point(213, 111);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(92, 34);
-            this.btnIn.TabIndex = 24;
-            this.btnIn.Text = "In hóa đơn";
-            this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click_1);
             // 
             // txtMaNV
             // 
@@ -270,7 +242,7 @@
             // btnHuy
             // 
             this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(375, 111);
+            this.btnHuy.Location = new System.Drawing.Point(435, 111);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(57, 34);
             this.btnHuy.TabIndex = 23;
@@ -291,7 +263,7 @@
             // btnSua
             // 
             this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(311, 111);
+            this.btnSua.Location = new System.Drawing.Point(258, 111);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(62, 34);
             this.btnSua.TabIndex = 22;
@@ -303,7 +275,7 @@
             // btnXemCT
             // 
             this.btnXemCT.Image = global::demobtl2.Properties.Resources.edit_select_all;
-            this.btnXemCT.Location = new System.Drawing.Point(8, 111);
+            this.btnXemCT.Location = new System.Drawing.Point(322, 111);
             this.btnXemCT.Name = "btnXemCT";
             this.btnXemCT.Size = new System.Drawing.Size(111, 34);
             this.btnXemCT.TabIndex = 21;
@@ -393,9 +365,7 @@
         private System.Windows.Forms.Button btnXemCT;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTimkiem;
     }

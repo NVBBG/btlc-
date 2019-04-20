@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,8 +56,9 @@
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.btnDong = new System.Windows.Forms.Button();
             this.rdNam = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +98,9 @@
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(174, 20);
             this.txtTenKH.TabIndex = 2;
+            this.txtTenKH.TextChanged += new System.EventHandler(this.txtTenKH_TextChanged);
             this.txtTenKH.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTenKH_KeyUp);
+            //this.txtTenKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenKH_Validating);
             // 
             // txtDienThoai
             // 
@@ -216,6 +221,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khách hàng";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::demobtl2.Properties.Resources.document_print;
+            this.button1.Location = new System.Drawing.Point(144, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 31);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "In";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -318,18 +336,9 @@
             this.rdNam.Text = "Nam";
             this.rdNam.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // errorProvider1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::demobtl2.Properties.Resources.document_print;
-            this.button1.Location = new System.Drawing.Point(144, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 31);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "In";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // KhachHang
             // 
@@ -346,6 +355,7 @@
             this.Load += new System.EventHandler(this.KhachHang_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +389,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTimkiem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

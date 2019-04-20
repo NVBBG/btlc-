@@ -1,6 +1,6 @@
 ﻿namespace demobtl2
 {
-    partial class inkhachhang
+    partial class InKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -52,6 +52,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "inkhachhang";
             this.Text = "inkhachhang";
+            this.Load += new System.EventHandler(this.inkhachhang_Load);
             this.ResumeLayout(false);
 
         }

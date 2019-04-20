@@ -1,6 +1,6 @@
 ﻿namespace demobtl2
 {
-    partial class Chitiethoadon
+    partial class ChiTietHoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,6 @@
             this.txtGiamgia = new System.Windows.Forms.TextBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -107,11 +106,13 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(112, 115);
+            this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
+            this.btnThem.Location = new System.Drawing.Point(125, 115);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(88, 23);
+            this.btnThem.Size = new System.Drawing.Size(102, 31);
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm chi tiết";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -142,21 +143,25 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(206, 115);
+            this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
+            this.btnSua.Location = new System.Drawing.Point(233, 115);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(84, 23);
+            this.btnSua.Size = new System.Drawing.Size(100, 31);
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa hóa đơn";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(298, 115);
+            this.btnIn.Image = global::demobtl2.Properties.Resources.document_print;
+            this.btnIn.Location = new System.Drawing.Point(339, 115);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 23);
+            this.btnIn.Size = new System.Drawing.Size(91, 31);
             this.btnIn.TabIndex = 7;
             this.btnIn.Text = "In hóa đơn";
+            this.btnIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
@@ -246,16 +251,6 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Thành tiền";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(458, 115);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 18;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -268,22 +263,23 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(377, 115);
+            this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
+            this.btnHuy.Location = new System.Drawing.Point(436, 115);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.Size = new System.Drawing.Size(72, 31);
             this.btnHuy.TabIndex = 20;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // Chitiethoadon
+            // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 321);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.txtGiamgia);
@@ -301,7 +297,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.lvCTHD);
-            this.Name = "Chitiethoadon";
+            this.Name = "ChiTietHoaDon";
             this.Text = "Chitiethoadon";
             this.Load += new System.EventHandler(this.Chitiethoadon_Load);
             this.ResumeLayout(false);
@@ -333,7 +329,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btnHuy;

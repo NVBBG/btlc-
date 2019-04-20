@@ -48,12 +48,11 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -216,7 +215,6 @@
             // 
             this.groupBox2.Controls.Add(this.txtTimKiem);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.btnSua);
@@ -227,22 +225,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tác Vụ";
             // 
-            // btnThoat
+            // txtTimKiem
             // 
-            this.btnThoat.Image = global::demobtl2.Properties.Resources.dialog_error2;
-            this.btnThoat.Location = new System.Drawing.Point(209, 28);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(69, 33);
-            this.btnThoat.TabIndex = 10;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.txtTimKiem.Location = new System.Drawing.Point(61, 91);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(215, 20);
+            this.txtTimKiem.TabIndex = 12;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Tìm kiếm";
             // 
             // btnThem
             // 
             this.btnThem.Image = global::demobtl2.Properties.Resources.list_add1;
-            this.btnThem.Location = new System.Drawing.Point(16, 27);
+            this.btnThem.Location = new System.Drawing.Point(84, 24);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(65, 33);
             this.btnThem.TabIndex = 6;
@@ -254,7 +257,7 @@
             // btnHuy
             // 
             this.btnHuy.Image = global::demobtl2.Properties.Resources.dialog_cancel;
-            this.btnHuy.Location = new System.Drawing.Point(146, 27);
+            this.btnHuy.Location = new System.Drawing.Point(217, 24);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(59, 33);
             this.btnHuy.TabIndex = 9;
@@ -266,7 +269,7 @@
             // btnSua
             // 
             this.btnSua.Image = global::demobtl2.Properties.Resources.configure;
-            this.btnSua.Location = new System.Drawing.Point(85, 27);
+            this.btnSua.Location = new System.Drawing.Point(155, 24);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(56, 33);
             this.btnSua.TabIndex = 7;
@@ -274,23 +277,6 @@
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 95);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Tìm kiếm";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(61, 91);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(215, 20);
-            this.txtTimKiem.TabIndex = 12;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // MyPham
             // 
@@ -329,7 +315,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.GroupBox groupBox2;

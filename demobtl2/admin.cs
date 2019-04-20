@@ -32,15 +32,16 @@ namespace demobtl2
         private void thêmThôngTinNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemNV nv = new ThemNV();
-            if (CheckExistForm("ThemNV"))
+            if (CheckExistForm("ThemNV") == true)
+            {
+                nv.Activate();
+            }
+            else
             {
                 nv.MdiParent = this;
                 nv.Show();
             }
-            else
-            {
-                return;
-            }
+
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
