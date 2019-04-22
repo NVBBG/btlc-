@@ -78,10 +78,10 @@
       <DependentUpon>Crdanhsachloaihang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrHoaDon.cs">
+    <Compile Include="CrCTHD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrHoaDon.rpt</DependentUpon>
+      <DependentUpon>CrCTHD.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DangNhap.cs">
@@ -101,12 +101,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrHD.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="InHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InHoaDon.Designer.cs">
-      <DependentUpon>InHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="InLoaiHang.cs">
       <SubType>Form</SubType>
@@ -189,9 +183,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Crdanhsachloaihang.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrHoaDon.rpt">
+    <EmbeddedResource Include="CrCTHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrHoaDon.cs</LastGenOutput>
+      <LastGenOutput>CrCTHD.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -202,9 +196,6 @@
     <EmbeddedResource Include="CrHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrHD.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InHoaDon.resx">
-      <DependentUpon>InHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InLoaiHang.resx">
       <DependentUpon>InLoaiHang.cs</DependentUpon>

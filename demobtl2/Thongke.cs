@@ -24,16 +24,9 @@ namespace demobtl2
         {
             InitializeComponent();
         }
-        private void thongketheothang_Load(object sender, EventArgs e)
+        private void Thongke_Load(object sender, EventArgs e)
         {
-            string query=null;
-            if(rdallgia.Checked)
-            {
-                txtGiaBanDau.Enabled = false;
-                txtGiaKetThuc.Enabled = false;       
-            }
-            query = "select";
-            hiendein(query,giabandau,giaketthuc);
+           
         }
         public void kiemtra()
         {
@@ -100,9 +93,21 @@ namespace demobtl2
             }
             crystalReportViewer1.Refresh();            
             rpt.SetParameterValue("@action",query);
-            rpt.SetParameterValue("@giabandau", giabandau);
-            rpt.SetParameterValue("@giaketthuc", giaketthuc);
+            rpt.SetParameterValue("@giabandau",giabandau);
+            rpt.SetParameterValue("@giaketthuc",giaketthuc);
             crystalReportViewer1.ReportSource = rpt;//// chọ  nguồn dữ liệu cho crystal Report
+        }
+
+        private void Thongke_Load_1(object sender, EventArgs e)
+        {
+            string query = null;
+            if (rdallgia.Checked)
+            {
+                txtGiaBanDau.Enabled = false;
+                txtGiaKetThuc.Enabled = false;
+            }
+            query = "select";
+            hiendein(query, giabandau, giaketthuc);
         }
     }
 }

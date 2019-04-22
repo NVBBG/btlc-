@@ -40,5 +40,4 @@ C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.inkhachhang.resour
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Chitiethoadon.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.Thongke.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.DangNhap.resources
-C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.InHoaDon.resources
 C:\Users\HP\source\repos\demobtl2\demobtl2\obj\Debug\demobtl2.InCTHoaDon.resources

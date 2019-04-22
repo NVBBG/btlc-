@@ -320,7 +320,7 @@ namespace demobtl2
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            InHoaDon ict = new InHoaDon(txtMaHD.Text);
+            InCTHoaDon ict = new InCTHoaDon(txtMaHD.Text);
             //ict.MdiParent = this;
             ict.Show();
         }

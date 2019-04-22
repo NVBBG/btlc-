@@ -364,7 +364,7 @@ namespace demobtl2
 
         private void btnIn_Click_1(object sender, EventArgs e)
         {
-            InHoaDon incthd = new InHoaDon(txtMaHD.Text);
+            Thongke incthd = new Thongke();
             incthd.Show();
         }
 
